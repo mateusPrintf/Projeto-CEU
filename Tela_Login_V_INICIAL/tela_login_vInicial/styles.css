@@ -1,7 +1,0 @@
-html{
-	height: 623px;
-    /*width: 900px;*/
-    background-color:beige;     /* Caso o Navegador não Suporte o gradiente*/
-    background-image: linear-gradient(DeepSkyBlue,MediumSpringGreen);
-    background-repeat: no-repeat;
-}
