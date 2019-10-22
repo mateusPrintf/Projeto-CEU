@@ -1,6 +1,14 @@
-*** vERSÃO INICIAL: 0.1  18/10/2019:
+*** vERSÃO 0.1  18/10/2019:
 
 -Estrutura básica do HTML.
 -Efeito Background Gradiente em CSS.
 -Imagem Logo Centralizada.
 ------------------------------------|
+
+*** VERSÃO 0.2  20/10/2019:
+
+-Implementação de interface.
+-Correção de dimensões.
+-Implementação de Login,senha,cadastre-se e esqueci minha senha (aind n link);
+------------------------------------|
+ 
