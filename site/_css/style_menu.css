@@ -86,6 +86,25 @@ body {
     color: #fff;
 }
 
+.foto{
+    width: 120px;
+    margin: -20px auto -20px 600px;
+}
+
+nav#evento h1{
+    position: relative;
+    display: block;
+    top: 80px;
+    left: 160px;
+}
+
+nav#evento form {
+    position: relative;
+    display: block;
+    top: 90px;
+    left: 160px;
+}
+
 @media(min-width: 679px) {
     .menu-toggle {
         display: none;
