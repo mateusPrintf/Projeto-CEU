@@ -13,7 +13,9 @@ body {
 .cabecalho {
     background: rgb(50, 150, 255);
     height: 80px;
+    width: 100%;
     box-sizing: content-box;
+    position: fixed;
 }
 
 .logo {
@@ -38,6 +40,7 @@ body {
 }
 
 .menu {
+    position: relative;
     display: inline-block;
     vertical-align: top;
     height: 80px;
