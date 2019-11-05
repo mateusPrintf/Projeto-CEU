@@ -89,12 +89,13 @@ body {
     color: #fff;
 }
 
-.foto{
-    width: 120px;
+.foto {
     margin: -20px auto -20px 600px;
 }
 
-nav#evento h1{
+nav#evento h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 2%;
     position: relative;
     display: block;
     top: 80px;
@@ -102,6 +103,7 @@ nav#evento h1{
 }
 
 nav#evento form {
+    font-family: Arial, Helvetica, sans-serif;
     position: relative;
     display: block;
     top: 90px;

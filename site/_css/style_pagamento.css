@@ -1,0 +1,58 @@
+.container {
+    box-sizing: border-box;
+}
+
+#conteudo {
+    height: 100vh;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: rgb(50, 150, 255);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+footer {
+    height: 100%;
+    width: 100%;
+    padding: 50px;
+    background-color: rgb(50, 150, 255);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.rodape p {
+    align-items: center;
+    margin-bottom: 100%;
+}
+
+.logo {
+    align-content: center;
+    margin-left: 0px;
+}
+
+.forms-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-env {
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
