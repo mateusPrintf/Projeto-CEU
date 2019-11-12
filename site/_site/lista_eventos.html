@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CEU Online</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#div1{
+			background-color: rgb(50, 150, 255);
+			padding: 4px;
+			font-family: "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial, Ubuntu, Cantarell, "Fira Sans", sans-serif;
+		}
+		#div1 h3{
+			text-align: center;
+		}
+	</style>
+
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../_css/style_menu.css" />
+    <link rel="shortcut icon" href="../_imagens/icon_mini.png" type="image/x-png"/>
+
+    <link rel="stylesheet" type="text/css" href="../_css/style_link_crie_um_evento.css">
+</head>
+
+<body>
+	<div id="div1">
+		<center>
+			<a href="../_site/index.html"> <img src="../_imagens/CEU_noname.png" width="70" title="home"> </a>
+		</center>
+	</div>
+
+		
+			<a href="../_site/cadastro_eventos.html">Crie um Evento Clicando Aqui</a>
+		
+
+    <nav id="evento">
+        <h1>Área de Eventos</h1>
+    </nav>
+
+    <nav id="evento">
+        <form>
+            <div class="form-row">
+                <div class="col-2">
+                    <input type="text" class="form-control" placeholder="Nome do Evento">
+                </div>
+                <div class="col-2">
+                    <select class="form-control">
+                        <option>Acadêmico</option>
+                        <option>Científico</option>
+                        <option>Curso</option>
+                        <option selected>...</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <select class="form-control">
+                        <option>Todas as áreas</option>
+                        <option>Ciencias Exatas</option>
+                        <option>Ciencias Humanas</option>
+                        <option selected>...</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <select class="form-control">
+                        <option>Todas as datas</option>
+                        <option>Esta semana</option>
+                        <option>Este mês</option>
+                        <option selected>...</option>
+                    </select>
+                </div>
+                <div class="button-env">
+                    <button class="btn btn-primary" type="submit">Buscar Evento</button>
+                </div>
+        </form>
+    </nav>
+</body>
+
+</html>
