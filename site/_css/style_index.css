@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
 body {
+    margin: 2%;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15pt;
     background-color: rgb(50, 150, 255);
 }
 
@@ -9,7 +12,6 @@ body {
     text-align: center;
     color: white;
     font-size: 30px;
-    font-family: 'Anton', sans-serif;
     text-shadow: 1px 1px 1px black;
 }
 
@@ -26,10 +28,25 @@ body {
     margin-top: -330px;
 }
 
-button.botão {
+.cabecalho a {
+    text-decoration: none;
+    color: #eee;
+    font-size: 18pt;
+}
+
+.autenticacao {
+    float: center;
+    height: 80px;
+    padding: 25px;
+}
+
+.botao {
     border-radius: 30px;
-    padding: 10px 25px;
+    padding: 1% 5%;
     margin: 10px;
+}
+
+.destaque {
     background: #1714c7cc;
     color: #fff;
 }
@@ -38,10 +55,10 @@ button.botão {
     background-color: rgb(255, 255, 255);
     width: 50%;
     margin: auto;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 50px;
-    padding-bottom: 2px;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 #conteudo {
@@ -49,6 +66,17 @@ button.botão {
     justify-content: center;
     align-items: center;
     display: flex;
-    padding: -10px;
-    margin-bottom: -20px;
+    padding: 1%;
+}
+
+@media(min-width: 679px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
+@media(max-width: 910px) {
+    .autenticacao {
+        display: none;
+    }
 }
