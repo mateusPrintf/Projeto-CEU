@@ -60,10 +60,15 @@
             </li>
             <li>
                 <a href="./gerenciamento_user_evento.php">
-                    <i class="fa fa-tachometer" aria-hidden="true"></i> Eventos
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> Seus eventos
                 </a>
             </li>
-            <li class="header">Conta</li>
+            <li>
+                <a href="./gerenciamento_user_evento.php">
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> Eventos inscritos
+                </a>
+            </li>
+            <li class="header">Configuração da conta</li>
             <li>
                 <a href="./metodo_pagamento.php">
                     <i class="fa fa-users" aria-hidden="true"></i> Pagamentos

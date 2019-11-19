@@ -3,21 +3,20 @@
 <?php
     $dsn = 'mysql:host=127.0.0.1;dbname=ceu';
     $user = 'root';
-    $senha = '1219';
+    $senha = '';
 
     try {
         $conexao = new PDO($dsn, $user, $senha);
         
-        $query = "select * from tb_evento where ";
-        $query .= " id = :id";
+        $query = "select * from tb_evento where id_usuario = :id_usuario";
 
         $stmt = $conexao->prepare($query);
 
-        $stmt->bindValue(':id', $_SESSION['id']);
+        $stmt->bindValue(':id_usuario', $_SESSION['id']);
 
         $stmt->execute();
 
-        $eventos_dados = $stmt->fetch(); //PDO::FETCH_BOTH, _ASSOC, _NUM, _OBJ  
+        $eventos_dados = $stmt->fetchAll(PDO::FETCH_OBJ); //PDO::FETCH_BOTH, _ASSOC, _NUM, _OBJ  
         
     } catch (PDOException $e) {
         echo 'Erro: '.$e->getCode().' Mensagem: '.$e->getMessage();
@@ -85,10 +84,15 @@
             </li>
             <li>
                 <a href="">
-                    <i class="fa fa-tachometer" aria-hidden="true"></i> Eventos
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> Seus eventos
                 </a>
             </li>
-            <li class="header">Conta</li>
+            <li>
+                <a href="">
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> Eventos inscritos
+                </a>
+            </li>
+            <li class="header">Configuração da conta</li>
             <li>
                 <a href="./metodo_pagamento.php">
                     <i class="fa fa-users" aria-hidden="true"></i> Pagamentos
@@ -113,21 +117,21 @@
             <div class="container-fluid">
                 <h1 class="display-4 font-inicio"> Seus eventos</h1>
                 <hr>
-                <!-- Aqui -->
-                <div class="card text-center">
-                    <div class="card-header card-header-centerC">
-                        Destaque
+                <? foreach ($eventos_dados as $evento) { ?>
+                    <div class="card text-center mb-5">
+                        <div class="card-header card-header-centerC">
+                            
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $evento->nome ?></h5>
+                            <p class="card-text"><?= $evento->descricao ?></p>
+                            <a href="#" class="btn btn-primary">Ir para a pagina do evento</a>
+                        </div>
+                        <div class="card-footer text-muted card-header-centerC">
+                            Data de inicio: <?= $evento->data_inicio ?> | Data de termino: <?= $evento->data_fim ?>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Título do evento</h5>
-                        <p class="card-text">Descrição a respeito do evento</p>
-                        <a href="#" class="btn btn-primary">Ir para a pagina do evento</a>
-                    </div>
-                    <div class="card-footer text-muted card-header-centerC">
-                        2 dias atrás
-                    </div>
-                </div>
-                <!-- Aqui -->
+                <?}?>
                 <hr>
             </div> 
         </div>

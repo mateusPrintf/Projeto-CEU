@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./_css/style_cadastro.css">
     <title>CEU - Cadastro de usuário</title>
+
+
 </head>
 
 <body>
@@ -50,6 +52,11 @@
                                             <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email" required>
                                         </div>
                                     </div>
+                                    <? if (isset($_GET['erro']) && $_GET['erro'] == 'emailJaCadastrado') {?>
+                                        <div class = "text-danger">
+                                            Email já cadastrado!
+                                        </div>
+                                    <?}?>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="inputPassword4">Senha</label>
@@ -60,6 +67,11 @@
                                             <input type="password" class="form-control" id="inputPassword4" placeholder="Senha" name="senha2" required>
                                         </div>
                                     </div>
+                                    <? if (isset($_GET['erro']) && $_GET['erro'] == 'senhaDesigual') {?>
+                                        <div class = "text-danger">
+                                            As senhas não são iguais!
+                                        </div>
+                                    <?}?>
                                     <div class="form-row">
                                         <div class="col-md-6 mb-3">
                                             <label for="validationDefault03">Estado</label>

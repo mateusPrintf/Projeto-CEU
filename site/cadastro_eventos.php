@@ -7,9 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./_css/style_cadastro.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css' rel='stylesheet' type='text/css'>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js' type='text/javascript'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+    
     <title>CEU - Cadastro de Eventos</title>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $('#datepicker').datepicker({
+            format: 'dd/mm/yyyy',                
+            language: 'pt-br' 
+           });   
+     });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $('#datepicker1').datepicker({
+            format: 'dd/mm/yyyy',                
+            language: 'pt-BR' 
+           });   
+     });
+    </script>
+    
 </head>
 
 <body>
@@ -32,7 +59,7 @@
                                             <label for="validationDefault01">Nome do evento</label>
                                             <input type="text" class="form-control" id="validationDefault01" placeholder="Nome do Evento" name="nome" required>
                                         </div>
-                                        <div class="col-md-4 mb-3">
+                                        <div class="col-md-5 mb-3">
                                             <label for="validationDefault02">Quantidade máxima participantes</label>
                                             <select class="form-control" name="qntd_part">
                                                 <option>Quantidade máxima participantes
@@ -47,19 +74,35 @@
                                                 <option value="1000">mais de 1000</option>
                                             </select>
                                         </div>
-                                        <div class="col-md-4 mb-3">
-                                            <label for="validationDefaultUsername">Usuário administrador</label>
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                                                </div>
-                                                <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Usuário" aria-describedby="inputGroupPrepend2" name="user_admin" required>
-                                            </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="validationDefault02">Tipo do evento</label>
+                                            <select class="form-control" name="tipo">
+                                                <option value="gratis">Grátis</option>
+                                                <option value="pago">Pago</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="validationDefault03">Valor do ingresso</label>
+                                            <input type="text" class="form-control" id="validationDefault03" placeholder="R$ 0,00" name="valor" required>
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label for="inputEmail4">Email</label>
                                             <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email" required>
                                         </div>
+                                    </div>
+                                    <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">Descrição do evento</label>
+                                            <textarea class="form-control col-md-12" id="exampleFormControlTextarea1" rows="3" name="descricao"></textarea>
+                                    </div>
+                                    <div class="form row">
+                                            <div class='col-md-4 ml-8 mb-3'>
+                                                Data de inicio do evento
+                                                <input type='text' class="form-control" id='datepicker' placeholder='Data inicio' name="data_inicio"> 
+                                            </div>
+                                            <div class='col-sm-4 ml-3 mb-3'>
+                                                Data de final do evento
+                                                <input type='text' class="form-control" id='datepicker1' placeholder='Data final' name="data_fim">  
+                                            </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-6 mb-3">

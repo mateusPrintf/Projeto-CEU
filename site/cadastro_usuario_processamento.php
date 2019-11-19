@@ -2,10 +2,18 @@
 
     $dsn = 'mysql:host=127.0.0.1;dbname=ceu';
     $user = 'root';
-    $senha = '1219';
+    $senha = '';
 
     try {
         $conexao = new PDO($dsn, $user, $senha);
+
+        $queryEmail = '
+            select id from tb_usuario where email = :email
+        ';
+
+        $stmtEmail = $conexao->prepare($queryEmail);
+        $stmtEmail->bindValue(':email', $_POST['email']);
+        $resultado = $stmtEmail->execute();
 
         $query = '
             insert into tb_usuario(
@@ -20,25 +28,31 @@
                     :cep)
         ';
 
-        $stmt = $conexao->prepare($query);
-        $stmt->bindValue(':nome', $_POST['nome']);
-        $stmt->bindValue(':usuario', $_POST['usuario']);
-        $stmt->bindValue(':email', $_POST['email']);
-        $stmt->bindValue(':senha', $_POST['senha1']);
-        $stmt->bindValue(':estado', $_POST['estado']);
-        $stmt->bindValue(':cidade', $_POST['cidade']);
-        $stmt->bindValue(':cep', $_POST['cep']);
+        if ($_POST['senha1'] != $_POST['senha2']) {
+            header('Location: cadastro_usuario.php?erro=senhaDesigual');
 
-        $stmt->execute();
+        }else if ($resultado == 1) {
+            header('Location: cadastro_usuario.php?erro=emailJaCadastrado');
 
-        $usuario = $stmt->fetch();
-        echo '<hr>';
-
-        header('Location: login.php');
+        }else {
+            $stmt = $conexao->prepare($query);
+            $stmt->bindValue(':nome', $_POST['nome']);
+            $stmt->bindValue(':usuario', $_POST['usuario']);
+            $stmt->bindValue(':email', $_POST['email']);
+            $stmt->bindValue(':senha', $_POST['senha1']);
+            $stmt->bindValue(':estado', $_POST['estado']);
+            $stmt->bindValue(':cidade', $_POST['cidade']);
+            $stmt->bindValue(':cep', $_POST['cep']);
+    
+            $stmt->execute();
+    
+            $usuario = $stmt->fetch();
+    
+            header('Location: login.php');
+        }
 
     } catch (PDOException $e) {
         echo 'Erro: '.$e->getCode().' Mensagem: '.$e->getMessage();
         //podendo ser feito um registro de erros(logs) do sistema
     }
-
 ?>

@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./_css/style_index.css" />
 
     <title>CEU Online</title>
@@ -14,19 +13,18 @@
 
     <section>
         <div id="conteudo">
-            <article>
-                <figure>
-                    <a href="../menu/menu.html"><img src="./_imagens/CEU.png" class="img-fluid ml-5" width="200"></a>
-                </figure>
-            </article>
+            <figure>
+                <a href="../menu/menu.html"><img src="./_imagens/CEU.png" class="img-fluid ml-5" width="200"></a>
+            </figure>
         </div>
 
         <div class="h1">
             <h1>VOCÊ ESTÁ NO CEU</h1>
         </div>
+    </section>
 
-        <div class="quadro">
-            <div class="p">
+        <div class="quadro p-10">
+            <div>
                 <p >
                     Seja bem vindo(a) ao CEU, <b>Central de Eventos Uespi</b>. Aqui você pode criar, gerenciar e participar de eventos acadêmicos.
                 </p>
@@ -35,12 +33,11 @@
                 </p>
             </div>
             <center>
-                <div class="quadro botão">
-                    <a href="login.php" type="button" name="Login" value="" class="quadro botão">Entrar</a>
+                <div>
+                    <a href="login.php" type="button" name="Login" value="" class="botão btn btn-primary">Entrar</a>
                 </div>
             </center>
         </div>
-    </section>
 
 </body>
 
