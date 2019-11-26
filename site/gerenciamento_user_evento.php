@@ -54,7 +54,7 @@
                         <a href="#inicio">Início</a>
                     </li>
                     <li>
-                        <a href="./tela Evento/evento.html">Eventos</a>
+                        <a href="evento.php">Eventos</a>
                     </li>
                     <li>
                         <a href="#sobre">Sobre</a>

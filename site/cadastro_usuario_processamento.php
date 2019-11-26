@@ -8,12 +8,13 @@
         $conexao = new PDO($dsn, $user, $senha);
 
         $queryEmail = '
-            select id from tb_usuario where email = :email
+            select * from tb_usuario where email = :email
         ';
 
         $stmtEmail = $conexao->prepare($queryEmail);
         $stmtEmail->bindValue(':email', $_POST['email']);
         $resultado = $stmtEmail->execute();
+        $userAchado = $stmtEmail->fetch(PDO::FETCH_OBJ);
 
         $query = '
             insert into tb_usuario(
@@ -31,7 +32,10 @@
         if ($_POST['senha1'] != $_POST['senha2']) {
             header('Location: cadastro_usuario.php?erro=senhaDesigual');
 
-        }else if ($resultado == 1) {
+        }else if (!empty($userAchado)) {
+            echo '<pre>';
+            print_r($userAchado);
+            echo '</pre>';
             header('Location: cadastro_usuario.php?erro=emailJaCadastrado');
 
         }else {

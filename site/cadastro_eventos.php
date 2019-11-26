@@ -75,7 +75,7 @@
                                             </select>
                                         </div>
                                         <div class="col-md-6 mb-3">
-                                            <label for="validationDefault02">Tipo do evento</label>
+                                            <label for="validationDefault02">Cobrança</label>
                                             <select class="form-control" name="tipo">
                                                 <option value="gratis">Grátis</option>
                                                 <option value="pago">Pago</option>
@@ -84,6 +84,14 @@
                                         <div class="col-md-6 mb-3">
                                             <label for="validationDefault03">Valor do ingresso</label>
                                             <input type="text" class="form-control" id="validationDefault03" placeholder="R$ 0,00" name="valor" required>
+                                        </div>
+                                        <div class="col-md-5 mb-3">
+                                            <label for="validationDefault02">Tipo do evento</label>
+                                            <select class="form-control" name="area">
+                                                <option> Tipo do evento </option>
+                                                <option value="palestra">Palestra</option>
+                                                <option value="minicurso">Minicurso</option>
+                                            </select>
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label for="inputEmail4">Email</label>

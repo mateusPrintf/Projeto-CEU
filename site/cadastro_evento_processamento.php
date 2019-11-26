@@ -11,12 +11,13 @@
 
         $query = '
             insert into tb_evento(
-                id_usuario, nome, email, descricao, preco_evento, data_inicio, data_fim, qntd_part, estado, cidade, cep
+                id_usuario, nome, email, descricao, area, preco_evento, data_inicio, data_fim, qntd_part, estado, cidade, cep
                 ) values (
                     :id_usuario,
                     :nome, 
                     :email,
                     :descricao,
+                    :area,
                     :preco_evento,
                     :data_inicio,
                     :data_fim,
@@ -35,6 +36,7 @@
         $stmt->bindValue(':nome', $_POST['nome']);
         $stmt->bindValue(':email', $_POST['email']);
         $stmt->bindValue(':descricao', $_POST['descricao']);
+        $stmt->bindValue(':area', $_POST['area']);
         $stmt->bindValue(':preco_evento', $_POST['valor']);
         $stmt->bindValue(':data_inicio', $_POST['data_inicio']);
         $stmt->bindValue(':data_fim', $_POST['data_fim']);
