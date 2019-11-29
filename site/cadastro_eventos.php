@@ -1,3 +1,4 @@
+<?php include_once('busca_cep.php'); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -113,17 +114,18 @@
                                             </div>
                                     </div>
                                     <div class="form-row">
+                                        <div class="col-md-3 mb-3">
+                                            <label>CEP</label>
+                                            <input type="text" class="form-control" id="cep" placeholder="CEP" name="cep" maxlength="8" required
+                                            onblur="pesquisacep(this.value);">
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <label>Cidade</label>
+                                            <input type="text" class="form-control" id="cidade" placeholder="Cidade" name="cidade" required>
+                                        </div>
                                         <div class="col-md-6 mb-3">
-                                            <label for="validationDefault03">Estado</label>
-                                            <input type="text" class="form-control" id="validationDefault03" placeholder="Estado" name="estado" required>
-                                        </div>
-                                        <div class="col-md-3 mb-3">
-                                            <label for="validationDefault04">Cidade</label>
-                                            <input type="text" class="form-control" id="validationDefault04" placeholder="Cidade" name="cidade" required>
-                                        </div>
-                                        <div class="col-md-3 mb-3">
-                                            <label for="validationDefault05">CEP</label>
-                                            <input type="text" class="form-control" id="validationDefault05" placeholder="CEP" name="cep" required>
+                                            <label>Estado</label>
+                                            <input type="text" class="form-control" id="estado" placeholder="Estado" name="estado" required>
                                         </div>
                                     </div>
                                     <div class="forms-group">
