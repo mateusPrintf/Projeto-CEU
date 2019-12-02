@@ -47,9 +47,6 @@
 
         $stmt->execute();
 
-        $usuario = $stmt->fetch();
-        echo '<hr>';
-
         header('Location: gerenciamento_user_evento.php');
 
     } catch (PDOException $e) {
