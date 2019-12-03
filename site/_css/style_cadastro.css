@@ -54,3 +54,7 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
+#pai div{
+    display: none;
+}

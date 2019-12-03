@@ -31,13 +31,19 @@
             language: 'pt-br'
         });
     });
-    </script>
 
-    <script type="text/javascript">
     $(document).ready(function() {
         $('#datepicker1').datepicker({
             format: 'dd/mm/yyyy',
             language: 'pt-BR'
+        });
+    });
+
+    $(document).ready(function() {
+        $('#tipo').on('change', function() {
+            var SelectValue = '#' + $(this).val();
+            $('#pai').children('div').hide();
+            $('#pai').children(SelectValue).show();
         });
     });
     </script>
@@ -80,17 +86,20 @@
                                                 <option value="1000">mais de 1000</option>
                                             </select>
                                         </div>
-                                        <div class="col-md-6 mb-3">
-                                            <label for="validationDefault02">Cobrança</label>
-                                            <select class="form-control" name="tipo">
+                                        <div class="col-md-5 mb-3">
+                                            <label>Cobrança</label>
+                                            <select id="tipo" name="tipo"class="form-control" >
+                                                <option value="">Selecione</option>
                                                 <option value="gratis">Grátis</option>
                                                 <option value="pago">Pago</option>
                                             </select>
                                         </div>
-                                        <div class="col-md-6 mb-3">
-                                            <label for="validationDefault03">Valor do ingresso</label>
-                                            <input type="text" class="form-control" id="validationDefault03"
-                                                placeholder="R$ 0,00" name="valor" required>
+                                        <div id="pai" class="col-md-5 mb-3">
+                                            <div id="pago">
+                                                <label for="validationDefault03">Valor do ingresso</label>
+                                                <input type="text" class="form-control" id="validationDefault03"
+                                                    placeholder="R$ 0,00" name="valor" required>
+                                            </div>
                                         </div>
                                         <div class="col-md-5 mb-3">
                                             <label for="validationDefault02">Tipo do evento</label>
