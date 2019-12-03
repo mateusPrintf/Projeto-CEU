@@ -2,14 +2,18 @@
 
     $dsn = 'mysql:host=127.0.0.1;dbname=ceu';
     $user = 'root';
-    $senha = '';
+    $senha = '1219';
+
+    echo '<pre>';
+    print_r($_POST);
+    echo '</pre>';
 
     try {
         $conexao = new PDO($dsn, $user, $senha);
 
         $query = '
             insert into tb_atividade(
-                id_evento, nome, qntd_part, inscricao, valor, tipo, data_inicio, data_fim
+                id_evento, nome, qntd_part, inscricao, valor, tipo, carga_hr, data_inicio, data_fim
                 ) values (
                     :id_evento,
                     :nome, 
@@ -17,6 +21,7 @@
                     :inscricao,
                     :valor,
                     :tipo,
+                    :carga_hr,
                     :data_inicio,
                     :data_fim)
                 ';
@@ -32,6 +37,7 @@
         $stmt->bindValue(':inscricao', $_POST['inscricao']);
         $stmt->bindValue(':valor', $_POST['valor']);
         $stmt->bindValue(':tipo', $_POST['area']);
+        $stmt->bindValue(':carga_hr', $_POST['carga_hr']);
         $stmt->bindValue(':data_inicio', $_POST['data_inicio']);
         $stmt->bindValue(':data_fim', $_POST['data_fim']);
         

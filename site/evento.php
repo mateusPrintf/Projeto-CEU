@@ -4,7 +4,7 @@
     $eventosProcurado = [];
     $dsn = 'mysql:host=127.0.0.1;dbname=ceu';
     $user = 'root';
-    $senha = '';
+    $senha = '1219';
 
     $dataInicio = new DateTime();
     $dataFim = new DateTime();

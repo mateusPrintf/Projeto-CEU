@@ -51,7 +51,7 @@
                             <label for="inputAddress">Código</label>
                             <input type="text" style="text-transform:uppercase" class="form-control" id="inputAddress" placeholder="EX: #PIRI10">
                         </div>
-                        <label>Desconto</label>
+                        <label>Desconto></label>
                         <div class="row">
                             <div class="input-group col">
                                 <div class="input-group-prepend">
@@ -84,7 +84,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary">Confirmar</button>
+                    <a href="#?id=<?=$evento->id?>" type="button" class="btn btn-primary">Confirmar</a>
                 </div>
 
             </div>

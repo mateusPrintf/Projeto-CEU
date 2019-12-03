@@ -4,7 +4,7 @@
 
     $dsn = 'mysql:host=127.0.0.1;dbname=ceu';
     $user = 'root';
-    $senha = '';
+    $senha = '1219';
 
     try {
         $conexao = new PDO($dsn, $user, $senha);
@@ -96,7 +96,7 @@
 
     <div class="content-container">
 
-        <div class="container-fluid">
+        <div class="container-fluid container-branco">
 
             <!-- Main component for a primary marketing message or call to action -->
             <div class="jumbotron jumbotron-fluid">

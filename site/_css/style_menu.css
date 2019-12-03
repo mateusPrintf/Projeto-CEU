@@ -40,7 +40,7 @@ body {
 }
 
 .menu {
-    position: relative;
+    position: fixed;
     display: inline-block;
     vertical-align: top;
     height: 80px;

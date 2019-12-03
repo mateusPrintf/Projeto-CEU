@@ -4,28 +4,35 @@
 
     $dsn = 'mysql:host=127.0.0.1;dbname=ceu';
     $user = 'root';
-    $senha = '';
+    $senha = '1219';
+
+    echo '<pre>';
+    print_r($_POST);
+    echo '</pre>';
 
     try {
         $conexao = new PDO($dsn, $user, $senha);
 
         $query = '
             insert into tb_evento(
-                id_usuario, nome, email, descricao, area, preco_evento, data_inicio, data_fim, qntd_part, estado, cidade, cep
+                id_usuario, nome, email, descricao, tipo, area, preco_evento, qntd_part, data_inicio, data_fim, endereco, bairro, estado, cidade, cep
                 ) values (
                     :id_usuario,
-                    :nome, 
+                    :nome,
                     :email,
                     :descricao,
+                    :tipo,
                     :area,
                     :preco_evento,
+                    :qntd_part,
                     :data_inicio,
                     :data_fim,
-                    :qntd_part,
+                    :endereco,
+                    :bairro,
                     :estado,
                     :cidade,
-                    :cep)
-        ';
+                    :cep
+                )';
 
         if ($_POST['tipo'] == 'gratis') {
             $_POST['valor'] = 0.00;
@@ -36,18 +43,24 @@
         $stmt->bindValue(':nome', $_POST['nome']);
         $stmt->bindValue(':email', $_POST['email']);
         $stmt->bindValue(':descricao', $_POST['descricao']);
+        $stmt->bindValue(':tipo', $_POST['tipo']);
         $stmt->bindValue(':area', $_POST['area']);
         $stmt->bindValue(':preco_evento', $_POST['valor']);
+        $stmt->bindValue(':qntd_part', $_POST['qntd_part']);
         $stmt->bindValue(':data_inicio', $_POST['data_inicio']);
         $stmt->bindValue(':data_fim', $_POST['data_fim']);
-        $stmt->bindValue(':qntd_part', $_POST['qntd_part']);
+        $stmt->bindValue(':endereco', $_POST['endereco']);
+        $stmt->bindValue(':bairro', $_POST['bairro']);
         $stmt->bindValue(':estado', $_POST['estado']);
         $stmt->bindValue(':cidade', $_POST['cidade']);
         $stmt->bindValue(':cep', $_POST['cep']);
 
-        $stmt->execute();
+        if ($stmt->execute()) {
+            header('Location: gerenciamento_user_evento.php?acao=sucesso');
+        }else {
+            header('Location: gerenciamento_user_evento.php?acao=naoSucesso');
+        }
 
-        header('Location: gerenciamento_user_evento.php');
 
     } catch (PDOException $e) {
         echo 'Erro: '.$e->getCode().' Mensagem: '.$e->getMessage();

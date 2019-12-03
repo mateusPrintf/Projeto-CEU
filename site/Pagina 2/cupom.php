@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
-    <?php include_once('modal_cupom.php') ?>
+    <?php include_once('modal_cupom.php?') ?>
    
 </head>
 

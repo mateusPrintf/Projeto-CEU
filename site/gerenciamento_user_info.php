@@ -4,7 +4,7 @@
 
     $dsn = 'mysql:host=127.0.0.1;dbname=ceu';
     $user = 'root';
-    $senha = '';
+    $senha = '1219';
 
     try {
         $conexao = new PDO($dsn, $user, $senha);

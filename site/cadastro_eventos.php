@@ -103,18 +103,18 @@
                                         </div>
                                         <div class="col-md-5 mb-3">
                                             <label for="validationDefault02">Tipo do evento</label>
-                                            <select class="form-control" name="area">
+                                            <select class="form-control" name="tipo">
                                                 <option> Tipo do evento </option>
-                                                <option value="palestra">Palestra</option>
-                                                <option value="minicurso">Minicurso</option>
+                                                <option value="Palestra">Palestra</option>
+                                                <option value="Minicurso">Minicurso</option>
                                             </select>
                                         </div>
                                         <div class="col-md-5 mb-3">
                                             <label for="validationDefault02">Área</label>
                                             <select class="form-control" name="area">
                                                 <option> Área </option>
-                                                <option value="palestra">Computação</option>
-                                                <option value="minicurso">Fisica</option>
+                                                <option value="Computação">Computação</option>
+                                                <option value="Fisica">Fisica</option>
                                             </select>
                                         </div>
                                         <div class="form-group col-md-12">

@@ -4,7 +4,7 @@
 
     $dsn = 'mysql:host=127.0.0.1;dbname=ceu';
     $user = 'root';
-    $senha = '';
+    $senha = '1219';
 
     try {
         $conexao = new PDO($dsn, $user, $senha);
@@ -36,6 +36,8 @@
     <link rel="stylesheet" href="./_css/style_gerenciamento_usuario.css">
     <link rel="stylesheet" href="./_css/style_menu.css">
     <link rel="stylesheet" href="./_css/style_evento_gerenciamento.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+    <?php include_once('./Pagina 2/modal_cupom.php') ?>
 </head>
 
 <body>
@@ -105,7 +107,7 @@
                             <!--nome qualquer-->
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title"><?=$evento->nome?></h5>
+                            <h5 class="card-title"><?=$evento->nome . ' ' . $evento->id?></h5>
                             <p class="card-text"><strong>Tipo</strong>: <?=$evento->tipo?></p>
                             <p class="card-text"><strong>Data de inicio</strong>: <?=$evento->data_inicio?></p>
                             <p class="card-text"><strong>Data do fim</strong>: <?=$evento->data_fim?></p>
@@ -113,6 +115,10 @@
                             <p class="card-text"><strong>Quantidade máxima de participantes</strong>: <?=$evento->qntd_part?></p>
                             <p class="card-text"><strong>Valor da Inscrição</strong>: <?=$evento->valor?> R$</p>
                             <a href="#" class="btn btn-primary">Excluir atividade</a>
+                            <!-- Botão para acionar modal -->
+                            <a class="btn btn-primary" data-toggle="modal" data-target="#ExemploModalCentralizado">
+                                Cadastrar cupom
+                            </a>
                         </div>
                     </div>
                 <?}?>

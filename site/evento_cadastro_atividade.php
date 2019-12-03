@@ -106,7 +106,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="validationDefault03">Valor da inscriçao</label>
-                            <input type="text" class="form-control" id="validationDefault03" placeholder="R$ 0,00" name="valor">
+                            <input type="text" class="form-control" id="validationDefault03" placeholder="R$ 0,00" name="valor" required>
                         </div>
                         <div class="col-md-5 mb-3">
                             <label for="validationDefault02">Tipo da atividade</label>
@@ -126,12 +126,18 @@
                     <div class="form row">
                             <div class='col-md-4 ml-8 mb-3'>
                                 Data e hora do inicio
-                                <input type='text' class="form-control" id='datepicker' placeholder='Data inicio' name="data_inicio"> 
+                                <input type='text' class="form-control" id='datepicker' placeholder='Data inicio' name="data_inicio" required> 
                             </div>
                             <div class='col-sm-4 ml-3 mb-3'>
                                 Data e hora do final
-                                <input type='text' class="form-control" id='datepicker1' placeholder='Data final' name="data_fim">  
+                                <input type='text' class="form-control" id='datepicker1' placeholder='Data final' name="data_fim" required>  
                             </div>
+                    </div>
+                    <div class="form row">
+                        <div class='col-md-4 ml-8 mb-3'>
+                            Carga horária
+                            <input type='text' class="form-control" placeholder='Carga horária' name="carga_hr" required> 
+                        </div>
                     </div>                    
                     <div class="button-env">
                         <button class="btn btn-primary" type="submit">Cadastrar atividade</button>
