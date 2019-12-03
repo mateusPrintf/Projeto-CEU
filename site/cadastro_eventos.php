@@ -5,38 +5,43 @@
     <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <?php include_once('busca_cep.php'); ?>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="./_css/style_cadastro.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css' rel='stylesheet' type='text/css'>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js' type='text/javascript'></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
-    
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css'
+        rel='stylesheet' type='text/css'>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js'
+        type='text/javascript'></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+
     <title>CEU - Cadastro de Eventos</title>
 
     <script type="text/javascript">
-        $(document).ready(function(){
-          $('#datepicker').datepicker({
-            format: 'dd/mm/yyyy',                
-            language: 'pt-br' 
-           });   
-     });
+    $(document).ready(function() {
+        $('#datepicker').datepicker({
+            format: 'dd/mm/yyyy',
+            language: 'pt-br'
+        });
+    });
     </script>
 
     <script type="text/javascript">
-        $(document).ready(function(){
-          $('#datepicker1').datepicker({
-            format: 'dd/mm/yyyy',                
-            language: 'pt-BR' 
-           });   
-     });
+    $(document).ready(function() {
+        $('#datepicker1').datepicker({
+            format: 'dd/mm/yyyy',
+            language: 'pt-BR'
+        });
+    });
     </script>
-    
+
 </head>
 
 <body>
@@ -57,7 +62,8 @@
                                     <div class="form-row">
                                         <div class="col-md-4 mb-3">
                                             <label for="validationDefault01">Nome do evento</label>
-                                            <input type="text" class="form-control" id="validationDefault01" placeholder="Nome do Evento" name="nome" required>
+                                            <input type="text" class="form-control" id="validationDefault01"
+                                                placeholder="Nome do Evento" name="nome" required>
                                         </div>
                                         <div class="col-md-5 mb-3">
                                             <label for="validationDefault02">Quantidade máxima participantes</label>
@@ -83,7 +89,8 @@
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label for="validationDefault03">Valor do ingresso</label>
-                                            <input type="text" class="form-control" id="validationDefault03" placeholder="R$ 0,00" name="valor" required>
+                                            <input type="text" class="form-control" id="validationDefault03"
+                                                placeholder="R$ 0,00" name="valor" required>
                                         </div>
                                         <div class="col-md-5 mb-3">
                                             <label for="validationDefault02">Tipo do evento</label>
@@ -93,45 +100,74 @@
                                                 <option value="minicurso">Minicurso</option>
                                             </select>
                                         </div>
+                                        <div class="col-md-5 mb-3">
+                                            <label for="validationDefault02">Área</label>
+                                            <select class="form-control" name="area">
+                                                <option> Área </option>
+                                                <option value="palestra">Computação</option>
+                                                <option value="minicurso">Fisica</option>
+                                            </select>
+                                        </div>
                                         <div class="form-group col-md-12">
                                             <label for="inputEmail4">Email</label>
-                                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email" required>
+                                            <input type="email" class="form-control" id="inputEmail4"
+                                                placeholder="Email" name="email" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                            <label for="exampleFormControlTextarea1">Descrição do evento</label>
-                                            <textarea class="form-control col-md-12" id="exampleFormControlTextarea1" rows="3" name="descricao"></textarea>
+                                        <label for="exampleFormControlTextarea1">Descrição do evento</label>
+                                        <textarea class="form-control col-md-12" id="exampleFormControlTextarea1"
+                                            rows="3" name="descricao"></textarea>
                                     </div>
                                     <div class="form row">
-                                            <div class='col-md-4 ml-8 mb-3'>
-                                                Data de inicio do evento
-                                                <input type='text' class="form-control" id='datepicker' placeholder='Data inicio' name="data_inicio"> 
-                                            </div>
-                                            <div class='col-sm-4 ml-3 mb-3'>
-                                                Data de final do evento
-                                                <input type='text' class="form-control" id='datepicker1' placeholder='Data final' name="data_fim">  
-                                            </div>
+                                        <div class='col-md-4 ml-8 mb-3'>
+                                            Data de inicio do evento
+                                            <input type='text' class="form-control" id='datepicker'
+                                                placeholder='Data inicio' name="data_inicio">
+                                        </div>
+                                        <div class='col-sm-4 ml-3 mb-3'>
+                                            Data de final do evento
+                                            <input type='text' class="form-control" id='datepicker1'
+                                                placeholder='Data final' name="data_fim">
+                                        </div>
                                     </div>
                                     <div class="form-row">
-                                        <div class="col-md-6 mb-3">
+                                        <div class="col-md-7 mb-3">
+                                            <label>CEP</label>
+                                            <input type="text" class="form-control" id="cep" placeholder="CEP"
+                                                name="cep" maxlength="9" onblur="pesquisacep(this.value);" required>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <label">Endereço</label>
+                                                <input type="text" class="form-control" id="endereco"
+                                                    placeholder="Endereço" name="endereco" required>
+                                        </div>
+                                        <div class="col-md-4 mb-4">
+                                            <label">Bairro</label>
+                                                <input type="text" class="form-control" id="bairro" placeholder="Bairro"
+                                                    name="bairro" required>
+                                        </div>
+
+                                        <div class="col-md-6 mb-5">
+                                            <label>Cidade</label>
+                                            <input type="text" class="form-control" id="cidade" placeholder="Cidade"
+                                                name="cidade" required>
+                                        </div>
+
+                                        <div class="col-md-4 mb-5">
                                             <label for="validationDefault03">Estado</label>
-                                            <input type="text" class="form-control" id="validationDefault03" placeholder="Estado" name="estado" required>
+                                            <input type="text" class="form-control" id="estado" placeholder="Estado"
+                                                name="estado" required>
                                         </div>
-                                        <div class="col-md-3 mb-3">
-                                            <label for="validationDefault04">Cidade</label>
-                                            <input type="text" class="form-control" id="validationDefault04" placeholder="Cidade" name="cidade" required>
-                                        </div>
-                                        <div class="col-md-3 mb-3">
-                                            <label for="validationDefault05">CEP</label>
-                                            <input type="text" class="form-control" id="validationDefault05" placeholder="CEP" name="cep" required>
-                                        </div>
+
                                     </div>
                                     <div class="forms-group">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2"
+                                                required>
                                             <label class="form-check-label" for="invalidCheck2">
-                                                    Concordo com os <a href="#termos">termos e condições</a>
-                                                </label>
+                                                Concordo com os <a href="#termos">termos e condições</a>
+                                            </label>
                                         </div>
                                     </div>
                                     <div class="button-env">
