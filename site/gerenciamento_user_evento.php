@@ -74,7 +74,6 @@
             Gerenciamento
         </div>
         <ul class="sidebar-navigation">
-            <li class="header">Navegação</li>
             <li>
                 <a href="./gerenciamento_user_inicio.php">
                     <i class="fa fa-home" aria-hidden="true"></i> Meu usuário
@@ -86,19 +85,13 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="./gerenciamento_user_evento_inscrito.php">
                     <i class="fa fa-tachometer" aria-hidden="true"></i> Eventos inscritos
                 </a>
             </li>
-            <li class="header">Configuração da conta</li>
             <li>
                 <a href="./metodo_pagamento.php">
                     <i class="fa fa-users" aria-hidden="true"></i> Pagamentos
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-cog" aria-hidden="true"></i> Configurações
                 </a>
             </li>
             <li>
@@ -113,7 +106,7 @@
 
         <div class="container-fluid">
             <div class="container-fluid">
-                <h1 class="display-4 font-inicio"> Seus eventos</h1>
+                <h1 class="display-4 font-inicio"> Seus eventos criados</h1>
                 <hr>
                 <? foreach ($eventos_dados as $evento) { ?>
                     <div class="card text-center mb-5">

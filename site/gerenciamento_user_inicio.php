@@ -52,7 +52,6 @@
             Gerenciamento
         </div>
         <ul class="sidebar-navigation">
-            <li class="header">Navegação</li>
             <li>
                 <a href="">
                     <i class="fa fa-home" aria-hidden="true"></i> Meu usuário
@@ -64,19 +63,13 @@
                 </a>
             </li>
             <li>
-                <a href="./gerenciamento_user_evento.php">
+                <a href="./gerenciamento_user_evento_inscrito.php">
                     <i class="fa fa-tachometer" aria-hidden="true"></i> Eventos inscritos
                 </a>
             </li>
-            <li class="header">Configuração da conta</li>
             <li>
                 <a href="./metodo_pagamento.php">
                     <i class="fa fa-users" aria-hidden="true"></i> Pagamentos
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-cog" aria-hidden="true"></i> Configurações
                 </a>
             </li>
             <li>

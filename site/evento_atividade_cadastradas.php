@@ -107,7 +107,8 @@
                             <!--nome qualquer-->
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title"><?=$evento->nome . ' ' . $evento->id?></h5>
+                            <h2 class="card-title"><?=$evento->nome?></h2>
+                            <hr>
                             <p class="card-text"><strong>Tipo</strong>: <?=$evento->tipo?></p>
                             <p class="card-text"><strong>Data de inicio</strong>: <?=$evento->data_inicio?></p>
                             <p class="card-text"><strong>Data do fim</strong>: <?=$evento->data_fim?></p>
