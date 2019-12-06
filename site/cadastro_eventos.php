@@ -88,7 +88,7 @@
                                         </div>
                                         <div class="col-md-5 mb-3">
                                             <label>Cobrança</label>
-                                            <select id="tipo" name="tipo"class="form-control" >
+                                            <select id="tipo" name="tipo" class="form-control">
                                                 <option value="">Selecione</option>
                                                 <option value="gratis">Grátis</option>
                                                 <option value="pago">Pago</option>
@@ -151,12 +151,21 @@
                                                 <input type="text" class="form-control" id="endereco"
                                                     placeholder="Endereço" name="endereco" required>
                                         </div>
+                                        <div class="col-md-2 mb-4">
+                                            <label">Nº</label>
+                                                <input type="text" class="form-control" id="numero" placeholder="Número"
+                                                    name="numero" required>
+                                        </div>
                                         <div class="col-md-4 mb-4">
                                             <label">Bairro</label>
                                                 <input type="text" class="form-control" id="bairro" placeholder="Bairro"
                                                     name="bairro" required>
                                         </div>
-
+                                        <div class="col-md-8 mb-4">
+                                            <label">Complemento</label>
+                                                <input type="text" class="form-control" id="complemento"
+                                                    placeholder="complemento(opcional)" name="complemento">
+                                        </div>
                                         <div class="col-md-6 mb-5">
                                             <label>Cidade</label>
                                             <input type="text" class="form-control" id="cidade" placeholder="Cidade"
