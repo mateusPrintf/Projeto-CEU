@@ -4,7 +4,7 @@
 
     $dsn = 'mysql:host=127.0.0.1;dbname=ceu';
     $user = 'root';
-    $senha = '1219';
+    $senha = '';
 
     try {
         $conexao = new PDO($dsn, $user, $senha);
@@ -76,6 +76,11 @@
             Gerenciamento evento
         </div>
         <ul class="sidebar-navigation">
+            <li>
+                <a href="./gerenciamento_user_inicio.php">
+                    <i class="fa fa-home" aria-hidden="true"></i> Meu usuario
+                </a>
+            </li>
             <li>
                 <a href="">
                     <i class="fa fa-home" aria-hidden="true"></i> Informações

@@ -4,7 +4,7 @@
 
     $dsn = 'mysql:host=127.0.0.1;dbname=ceu';
     $user = 'root';
-    $senha = '1219';
+    $senha = '';
 
     try {
         $conexao = new PDO($dsn, $user, $senha);
@@ -80,6 +80,11 @@
         </div>
         <ul class="sidebar-navigation">
             <li>
+                <a href="./gerenciamento_user_inicio.php">
+                    <i class="fa fa-home" aria-hidden="true"></i> Meu usuario
+                </a>
+            </li>
+            <li>
                 <a href="./evento_gerenciamento.php?id=<?=$_GET['id']?>">
                     <i class="fa fa-home" aria-hidden="true"></i> Informações
                 </a>
@@ -117,9 +122,9 @@
                             <p class="card-text"><strong>Valor da Inscrição</strong>: <?=$evento->valor?> R$</p>
                             <a href="#" class="btn btn-primary">Excluir atividade</a>
                             <!-- Botão para acionar modal -->
-                            <a class="btn btn-primary" data-toggle="modal" data-target="#ExemploModalCentralizado">
+                            <button  class="btn btn-primary" data-toggle="modal" data-target="#ExemploModalCentralizado">
                                 Cadastrar cupom
-                            </a>
+                            </button>
                         </div>
                     </div>
                 <?}?>

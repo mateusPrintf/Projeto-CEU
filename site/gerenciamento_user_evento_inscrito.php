@@ -1,14 +1,16 @@
 <?php
+    session_start();
+
     $dsn = 'mysql:host=127.0.0.1;dbname=ceu';
     $user = 'root';
-    $senha = '1219';
+    $senha = '';
 
     try {
         $conexao = new PDO($dsn, $user, $senha);
         
         $query = '
         SELECT * FROM tb_evento left JOIN tb_inscricoes ON(tb_evento.id=tb_inscricoes.id_evento) 
-        WHERE tb_inscricoes.id_usuario = 1
+        WHERE tb_inscricoes.id_usuario = :id
         ';
 
         $stmt = $conexao->prepare($query);
@@ -118,7 +120,7 @@
                         <div class="card-body">
                             <h5 class="card-title"><?= $evento->nome ?></h5>
                             <p class="card-text"><?= $evento->descricao ?></p>
-                            <a href="#" class="btn btn-primary">Visualizar informações do evento</a>
+                            <a href="./info_evento.php?id=<?= $evento->id ?>" class="btn btn-primary">Visualizar informações do evento</a>
                         </div>
                         <div class="card-footer text-muted card-header-centerC">
                             Data de inicio: <?= $evento->data_inicio ?> | Data de termino: <?= $evento->data_fim ?>

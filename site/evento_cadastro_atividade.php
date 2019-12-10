@@ -12,6 +12,36 @@
     <link rel="stylesheet" href="./_css/style_gerenciamento_usuario.css">
     <link rel="stylesheet" href="./_css/style_menu.css">
     <link rel="stylesheet" href="./_css/style_evento_gerenciamento.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+    
+        $(document).ready(function() {
+            $('#datepicker').datepicker({
+                minDate: 0,
+                dateFormat: 'dd/mm/yy',
+                monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junio', 'Julho', 'Agosto',
+                            'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+                dayNames: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo'],
+                dayNamesMin: ['Se', 'Te', 'Qa', 'Qi', 'Se', 'Sa', 'Do']
+            });
+        });
+
+        $(document).ready(function() {
+            $('#datepicker1').datepicker({
+                minDate: 0,
+                dateFormat: 'dd/mm/yy',
+                monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junio', 'Julho', 'Agosto',
+                            'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+                dayNames: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo'],
+                dayNamesMin: ['Se', 'Te', 'Qa', 'Qi', 'Se', 'Sa', 'Do']
+            });
+        });
+    </script>
+
 </head>
 
 <body>
@@ -53,6 +83,11 @@
             Gerenciamento evento
         </div>
         <ul class="sidebar-navigation">
+            <li>
+                <a href="./gerenciamento_user_inicio.php">
+                    <i class="fa fa-home" aria-hidden="true"></i> Meu usuario
+                </a>
+            </li>
             <li>
                 <a href="./evento_gerenciamento.php?id=<?=$_GET['id']?>">
                     <i class="fa fa-home" aria-hidden="true"></i> Informações
@@ -106,7 +141,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="validationDefault03">Valor da inscriçao</label>
-                            <input type="text" class="form-control" id="validationDefault03" placeholder="R$ 0,00" name="valor" required>
+                            <input type="text" class="form-control" id="validationDefault03" placeholder="R$ 0,00" name="valor">
                         </div>
                         <div class="col-md-5 mb-3">
                             <label for="validationDefault02">Tipo da atividade</label>
