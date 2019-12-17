@@ -33,10 +33,6 @@
             var validacep = /^[0-9]{8}$/;
 
             if (validacep.test(cep)) {
-                document.getElementById('cidade').value = ("...");
-                document.getElementById('estado').value = ("...");
-                document.getElementById('endereco').value = ("...");
-                document.getElementById('bairro').value = ("...");
                 var script = document.createElement('script');
 
                 script.src = '//viacep.com.br/ws/' + cep + '/json/?callback=preechendo';

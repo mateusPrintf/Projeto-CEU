@@ -1,0 +1,4 @@
+[2019-12-06 21:08:47.349] [main] [info] update#setState idle
+[2019-12-06 21:09:17.352] [main] [info] update#setState checking for updates
+[2019-12-06 21:09:27.365] [main] [error] Error: net::ERR_NAME_NOT_RESOLVED
+[2019-12-06 21:09:27.365] [main] [info] update#setState idle

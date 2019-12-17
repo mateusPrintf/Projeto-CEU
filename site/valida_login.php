@@ -1,17 +1,15 @@
 <?php
 
+    include_once "./conexao.php";
+
     session_start();
 
     $user_autenticado = false;
     $user_id = null;
     $user_perfil_id = null;
 
-    $dsn = 'mysql:host=127.0.0.1;dbname=ceu';
-    $user = 'root';
-    $senha = '';
-
     try {
-        $conexao = new PDO($dsn, $user, $senha);
+        $conexao = new Conexao();
         
         $query = "select * from tb_usuario where ";
         $query .= " email = :email";

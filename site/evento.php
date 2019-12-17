@@ -1,16 +1,15 @@
 <?php
+
+    include_once "./conexao.php";
+    
     session_start();
 
     $eventosProcurado = [];
-    $dsn = 'mysql:host=127.0.0.1;dbname=ceu';
-    $user = 'root';
-    $senha = '';
-
     $dataInicio = new DateTime();
     $dataFim = new DateTime();
 
     try {
-        $conexao = new PDO($dsn, $user, $senha);
+        $conexao = new Conexao();
         
         $query = 'select * from tb_evento';
 
@@ -84,10 +83,12 @@
     <link rel="stylesheet" href="./_css/style_lista_evento.css">      
 
     <script>
-        
-        function jaCadastrado() {
-			return alert("Você já esta cadastrado neste evento")
-		}
+       
+        function alerta(nomeAlerta) {
+            if (nomeAlerta == 'chockHorario') return alert('Você já está inscrito em um evento no mesmo horário deste!')
+            else if (nomeAlerta == 'numMaxAtingido') return alert('Número máximo de participantes atingido!')
+            else if (nomeAlerta == 'inscricaoFeita') return alert('Inscrição realizada com sucesso')
+        }
 
     </script>
 </head>
@@ -161,9 +162,9 @@
 
         <div id="lista-evento">
             <div class="row">
-                <? if (isset($_GET['acao']) && $_GET['acao'] == 'jaCadastrado') {?>
+                <? if (isset($_GET['acao'])){?>
                     <script>
-                        jaCadastrado();
+                        alerta('<?= $_GET['acao'] ?>')
                     </script>
                 <?}?> 
                 <? if (isset($eventosProcurado) && !empty($eventosProcurado)) {?>

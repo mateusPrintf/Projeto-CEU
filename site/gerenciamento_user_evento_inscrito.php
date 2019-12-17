@@ -1,12 +1,11 @@
 <?php
+
+    include_once "./conexao.php";
+    
     session_start();
 
-    $dsn = 'mysql:host=127.0.0.1;dbname=ceu';
-    $user = 'root';
-    $senha = '';
-
     try {
-        $conexao = new PDO($dsn, $user, $senha);
+        $conexao = new Conexao();
         
         $query = '
         SELECT * FROM tb_evento left JOIN tb_inscricoes ON(tb_evento.id=tb_inscricoes.id_evento) 

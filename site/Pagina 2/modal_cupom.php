@@ -23,8 +23,12 @@
     <script>
     $(function() {
         $("#calendario").datepicker({
-            dateFormat: 'dd-mm-yy',
-            dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D']
+            minDate: 0,
+            dateFormat: 'dd/mm/yy',
+            monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junio', 'Julho', 'Agosto',
+                        'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+            dayNames: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo'],
+            dayNamesMin: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab', 'Dom']
         });
     });
     </script>

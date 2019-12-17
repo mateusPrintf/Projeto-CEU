@@ -17,7 +17,6 @@
     <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
     <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
     
-
     <title>CEU - Cadastro de Eventos</title>
 
     <script type="text/javascript">

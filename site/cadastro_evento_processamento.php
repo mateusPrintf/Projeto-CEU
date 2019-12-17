@@ -1,17 +1,10 @@
 <?php
 
+    include_once "./conexao.php";
     session_start();
 
-    $dsn = 'mysql:host=127.0.0.1;dbname=ceu';
-    $user = 'root';
-    $senha = '';
-
-    echo '<pre>';
-    print_r($_POST);
-    echo '</pre>';
-
     try {
-        $conexao = new PDO($dsn, $user, $senha);
+        $conexao = new Conexao();
 
         $query = '
             insert into tb_evento(
@@ -34,7 +27,7 @@
                     :cep
                 )';
 
-        if ($_POST['tipo'] == 'gratis') {
+        if ($_POST['tipo'] == 'gratis' || isset($_POST['tipo'])) {
             $_POST['valor'] = 0.00;
         }
 

@@ -1,15 +1,13 @@
 <?php
+
+    include_once "./conexao.php";
     
     $eventosProcurado = [];
-    $dsn = 'mysql:host=127.0.0.1;dbname=ceu';
-    $user = 'root';
-    $senha = '';
-
     $dataInicio = new DateTime();
     $dataFim = new DateTime();
 
     try {
-        $conexao = new PDO($dsn, $user, $senha);
+        $conexao = new Conexao();
         
         $query = 'select * from tb_evento';
 

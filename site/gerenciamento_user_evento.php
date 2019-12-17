@@ -1,12 +1,11 @@
 <? require_once "validador_acesso.php"; ?>
 
 <?php
-    $dsn = 'mysql:host=127.0.0.1;dbname=ceu';
-    $user = 'root';
-    $senha = '';
+
+    include_once "./conexao.php";
 
     try {
-        $conexao = new PDO($dsn, $user, $senha);
+        $conexao = new Conexao();
         
         $query = "select * from tb_evento where id_usuario = :id_usuario";
 
@@ -116,7 +115,7 @@
                         <div class="card-body">
                             <h5 class="card-title"><?= $evento->nome ?></h5>
                             <p class="card-text"><?= $evento->descricao ?></p>
-                            <a href="evento_gerenciamento.php?id=<?=$evento->id?>" class="btn btn-primary">Ir para a pagina do evento</a>
+                            <a href="evento_gerenciamento.php?id=<?=$evento->id?>" class="btn btn-primary">Ir para a pagina de gerenciamento do evento</a>
                         </div>
                         <div class="card-footer text-muted card-header-centerC">
                             Data de inicio: <?= $evento->data_inicio ?> | Data de termino: <?= $evento->data_fim ?>

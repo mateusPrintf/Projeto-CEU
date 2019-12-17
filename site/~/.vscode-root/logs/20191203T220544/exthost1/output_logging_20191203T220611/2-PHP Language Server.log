@@ -1,0 +1,56 @@
+DEBUG     Checking PHPLS_ALLOW_XDEBUG
+DEBUG     The xdebug extension is not loaded
+
+[Info  - 22:06:12] 24 files total
+[Info  - 22:06:12] Indexing project for definitions and static references
+Parsing file:///var/www/html/site/gerenciamento_user_evento.php
+Parsing file:///var/www/html/site/cadastro_usuario.php
+Parsing file:///var/www/html/site/index.php
+Parsing file:///var/www/html/site/busca_cep.php
+Parsing file:///var/www/html/site/Pagina%202/cupom.php
+Parsing file:///var/www/html/site/Pagina%202/modal_cupom.php
+Parsing file:///var/www/html/site/valida_login.php
+Parsing file:///var/www/html/site/metodo_pagamento.php
+Parsing file:///var/www/html/site/evento_atividade_cadastradas.php
+Parsing file:///var/www/html/site/cadastro_evento_processamento.php
+Parsing file:///var/www/html/site/inscricao_usuario.php
+Parsing file:///var/www/html/site/evento_gerenciamento.php
+Parsing file:///var/www/html/site/login.php
+Parsing file:///var/www/html/site/1cadastro_eventos.php
+Parsing file:///var/www/html/site/evento_cadastro_atividade.php
+Parsing file:///var/www/html/site/logoff.php
+Parsing file:///var/www/html/site/busca_evento.php
+Parsing file:///var/www/html/site/gerenciamento_user_inicio.php
+Parsing file:///var/www/html/site/cadastro_usuario_processamento.php
+Parsing file:///var/www/html/site/evento.php
+Parsing file:///var/www/html/site/validador_acesso.php
+Parsing file:///var/www/html/site/cadastro_eventos.php
+Parsing file:///var/www/html/site/adiciona_atividade.php
+Parsing file:///var/www/html/site/gerenciamento_user_info.php
+[Info  - 22:06:12] Indexing project for dynamic references
+Parsing file:///var/www/html/site/gerenciamento_user_evento.php
+Parsing file:///var/www/html/site/cadastro_usuario.php
+Parsing file:///var/www/html/site/index.php
+Parsing file:///var/www/html/site/busca_cep.php
+Parsing file:///var/www/html/site/Pagina%202/cupom.php
+Parsing file:///var/www/html/site/Pagina%202/modal_cupom.php
+Parsing file:///var/www/html/site/valida_login.php
+Parsing file:///var/www/html/site/metodo_pagamento.php
+Parsing file:///var/www/html/site/evento_atividade_cadastradas.php
+Parsing file:///var/www/html/site/cadastro_evento_processamento.php
+Parsing file:///var/www/html/site/inscricao_usuario.php
+Parsing file:///var/www/html/site/evento_gerenciamento.php
+Parsing file:///var/www/html/site/login.php
+Parsing file:///var/www/html/site/1cadastro_eventos.php
+Parsing file:///var/www/html/site/evento_cadastro_atividade.php
+Parsing file:///var/www/html/site/logoff.php
+Parsing file:///var/www/html/site/busca_evento.php
+Parsing file:///var/www/html/site/gerenciamento_user_inicio.php
+Parsing file:///var/www/html/site/cadastro_usuario_processamento.php
+Parsing file:///var/www/html/site/evento.php
+Parsing file:///var/www/html/site/validador_acesso.php
+Parsing file:///var/www/html/site/cadastro_eventos.php
+Parsing file:///var/www/html/site/adiciona_atividade.php
+Parsing file:///var/www/html/site/gerenciamento_user_info.php
+[Info  - 22:06:12] 0 Packages
+[Info  - 22:06:12] All 24 PHP files parsed in 0 seconds. 170 MiB allocated.

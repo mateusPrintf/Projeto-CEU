@@ -2,16 +2,13 @@
 
 <?php
 
+    include_once "./conexao.php";
     session_start();
-
     $jaCadastrado = false;
-    $dsn = 'mysql:host=127.0.0.1;dbname=ceu';
-    $user = 'root';
-    $senha = '';
 
     try {
 
-        $conexao = new PDO($dsn, $user, $senha);
+        $conexao = new Conexao();
 
         $queryQntdPart = 'select data_inicio, data_fim, id_evento from tb_atividade where id = :id';
 
@@ -60,14 +57,14 @@
                 $stmt3->bindValue(':id', $_GET['evento']);
                 echo $stmt3->execute();*/
 
-                header('Location: info_evento.php?id='. $dataAtt->id_evento . '&acao=inscricaoFeita');
+                header('Location: info_atividade.php?id='. $dataAtt->id_evento . '&acao=inscricaoFeita');
 
             }else {
-                header('Location: info_evento.php?id='. $dataAtt->id_evento . '&acao=jaCadastrado');
+                header('Location: info_atividade.php?id='. $dataAtt->id_evento . '&acao=jaCadastrado');
             }
 
         } else {
-            header('Location: info_evento.php?id='. $dataAtt->id_evento . '&acao=chockHorario');
+            header('Location: info_atividade.php?id='. $dataAtt->id_evento . '&acao=chockHorario');
         }
 
     } catch (PDOException $e) {

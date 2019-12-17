@@ -9,49 +9,54 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="./_css/style_cadastro.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css'
-        rel='stylesheet' type='text/css'>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js'
-        type='text/javascript'></script>
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
 
     <title>CEU - Cadastro de Eventos</title>
 
     <script type="text/javascript">
-    $(document).ready(function() {
-        $('#datepicker').datepicker({
-            format: 'dd/mm/yyyy',
-            language: 'pt-br'
+        $(document).ready(function() {
+            $('#datepicker').datepicker({
+                minDate: 0,
+                dateFormat: 'dd/mm/yy',
+                monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junio', 'Julho', 'Agosto',
+                            'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+                dayNames: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo'],
+                dayNamesMin: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab', 'Dom']
+            });
         });
-    });
 
-    $(document).ready(function() {
-        $('#datepicker1').datepicker({
-            format: 'dd/mm/yyyy',
-            language: 'pt-BR'
+        $(document).ready(function() {
+            $('#datepicker1').datepicker({
+                minDate: 0,
+                dateFormat: 'dd/mm/yy',
+                monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junio', 'Julho', 'Agosto',
+                            'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+                dayNames: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo'],
+                dayNamesMin: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab', 'Dom']
+            });
         });
-    });
 
-    $(document).ready(function() {
-        $('#tipo').on('change', function() {
-            var SelectValue = '#' + $(this).val();
-            $('#pai').children('div').hide();
-            $('#pai').children(SelectValue).show();
+        $(document).ready(function() {
+            $('#tipoPag').on('change', function() {
+                var selectValue = '#' + $(this).val()
+                if (selectValue == '#gratis') {
+                    $('#pago').hide()
+                    $('#pago').children('input').attr('value', 0)
+                }
+                else $('#pago').show()
+            });
         });
-    });
     </script>
 
 </head>
 
 <body>
-
     <div id="conteudo">
         <section>
             <article>
@@ -88,7 +93,7 @@
                                         </div>
                                         <div class="col-md-5 mb-3">
                                             <label>Cobrança</label>
-                                            <select id="tipo" name="tipo" class="form-control">
+                                            <select id="tipoPag" name="tipo"class="form-control" >
                                                 <option value="">Selecione</option>
                                                 <option value="gratis">Grátis</option>
                                                 <option value="pago">Pago</option>
@@ -151,21 +156,12 @@
                                                 <input type="text" class="form-control" id="endereco"
                                                     placeholder="Endereço" name="endereco" required>
                                         </div>
-                                        <div class="col-md-2 mb-4">
-                                            <label">Nº</label>
-                                                <input type="text" class="form-control" id="numero" placeholder="Número"
-                                                    name="numero" required>
-                                        </div>
                                         <div class="col-md-4 mb-4">
                                             <label">Bairro</label>
                                                 <input type="text" class="form-control" id="bairro" placeholder="Bairro"
                                                     name="bairro" required>
                                         </div>
-                                        <div class="col-md-8 mb-4">
-                                            <label">Complemento</label>
-                                                <input type="text" class="form-control" id="complemento"
-                                                    placeholder="complemento(opcional)" name="complemento">
-                                        </div>
+
                                         <div class="col-md-6 mb-5">
                                             <label>Cidade</label>
                                             <input type="text" class="form-control" id="cidade" placeholder="Cidade"

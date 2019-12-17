@@ -1,12 +1,9 @@
 <?php
+    include_once "./conexao.php";
     session_start();
 
-    $dsn = 'mysql:host=127.0.0.1;dbname=ceu';
-    $user = 'root';
-    $senha = '';
-
     try {
-        $conexao = new PDO($dsn, $user, $senha);
+        $conexao = new Conexao();
         
         $queryEvento = '
             select * from tb_evento where id = :id
@@ -17,17 +14,6 @@
         $stmtEvento->execute();
 
         $evento = $stmtEvento->fetch(PDO::FETCH_OBJ); //PDO::FETCH_BOTH, _ASSOC, _NUM, _OBJ  S
-
-
-        $queryAtt = '
-            select * from tb_atividade where id_evento = :id_evento
-        ';
-        
-        $stmtAtt = $conexao->prepare($queryAtt);
-        $stmtAtt->bindValue(':id_evento', $_GET['id']);
-        $stmtAtt->execute();
-
-        $atividades = $stmtAtt->fetchAll(PDO::FETCH_OBJ);
         
     } catch (PDOException $e) {
         echo 'Erro: '.$e->getCode().' Mensagem: '.$e->getMessage();
@@ -46,7 +32,6 @@
     <link rel="stylesheet" href="./_css/style_menu.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./_css/style_gerenciamento_usuario.css">
-    <link rel="stylesheet" href="./_css/style_evento_gerenciamento.css">
     <link rel="stylesheet" href="./_css/style_menu.css">
 </head>
 
@@ -95,12 +80,12 @@
                 </a>
             </li>
             <li>
-                <a href="./gerenciamento_user_inicio.php">
-                    <i class="fa fa-home" aria-hidden="true"></i> Info evento
+                <a href="">
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> Informações do evento
                 </a>
             </li>
             <li>
-                <a href="./info_evento_att_inscritas.php?id=<?=$_GET['id']?>">
+                <a href="./info_atividade.php?id=<?= $_GET['id'] ?>">
                     <i class="fa fa-tachometer" aria-hidden="true"></i> Atividades inscritas
                 </a>
             </li>
@@ -109,7 +94,7 @@
 
     <div class="content-container">
 
-        <div class="container-fluid container-branco">
+        <div class="container-fluid">
             <div class="container-fluid">
 
                 <div class="card container-branco">
@@ -131,26 +116,6 @@
                         <p class="card-text"><strong>Bairro</strong>: <?= $evento->bairro ?></p>
                         <p class="card-text"><strong>Cidade</strong>: <?= $evento->cidade ?>-<?= $evento->estado ?> </p>
                         <p class="card-text"><strong>Cep</strong>: <?= $evento->cep ?></p>
-                    </div>
-                </div>
-
-                <div class="card container-branco">
-                    <div class="card-header">
-                        <h1>Atividades do evento</h1>
-                    </div>
-                    <div class="card-body">
-                        <hr>
-                        <? foreach($atividades as $att) { ?>
-                            <h2 class="card-title"><?=$att->nome?></h2>
-                            <hr>
-                            <p class="card-text"><strong>Tipo</strong>: <?=$att->tipo?></p>
-                            <p class="card-text"><strong>Data de inicio</strong>: <?=$att->data_inicio?></p>
-                            <p class="card-text"><strong>Data do fim</strong>: <?=$att->data_fim?></p>
-                            <p class="card-text"><strong>Inscrição</strong>: <?=$att->inscricao?></p>
-                            <p class="card-text"><strong>Quantidade máxima de participantes</strong>: <?=$att->qntd_part?></p>
-                            <p class="card-text"><strong>Valor da Inscrição</strong>: <?=$att->valor?> R$</p>
-                            <a href="./inscricao_usuario_atividade.php?id=<?=$att->id?>" class="btn btn-primary">Inscrever-se na ativiade</a><hr><br><br>
-                        <?}?>
                     </div>
                 </div>
         </div>

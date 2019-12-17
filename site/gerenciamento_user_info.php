@@ -1,13 +1,11 @@
 <? require_once "validador_acesso.php"; ?>
 
 <?php
-
-    $dsn = 'mysql:host=127.0.0.1;dbname=ceu';
-    $user = 'root';
-    $senha = '';
+    
+    include_once "./conexao.php";
 
     try {
-        $conexao = new PDO($dsn, $user, $senha);
+        $conexao = new Conexao();
         
         $query = "select * from tb_usuario where ";
         $query .= " id = :id";
