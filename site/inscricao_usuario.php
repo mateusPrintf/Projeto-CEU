@@ -79,8 +79,8 @@
         $dataEventoInicio->setDate($anoIni, $mesIni, $diaIni);
         $dataEventoFim->setDate($anoFim, $mesFim, $diaFim);
 
-        echo $dataEventoInicio->format('z') . '/';
-        echo $dataEventoFim->format('z') . '<br>';
+        // echo $dataEventoInicio->format('z') . '/';
+        // echo $dataEventoFim->format('z') . '<br>';
 
         $query = '
             select data_inicio, data_fim from tb_evento left join tb_inscricoes on(tb_evento.id = tb_inscricoes.id_evento) where tb_inscricoes.id_usuario = :id
@@ -91,9 +91,9 @@
         $stmt->execute();
         $eventos = $stmt->fetchAll(PDO::FETCH_OBJ);
 
-        echo '<pre>';
-        print_r($eventos);
-        echo '</pre>';
+        // echo '<pre>';
+        // print_r($eventos);
+        // echo '</pre>';
 
         foreach ($eventos as $evento) {
             list($diaIni, $mesIni, $anoIni) = explode('/',$evento->data_inicio);
@@ -101,8 +101,8 @@
             $dataInicio->setDate($anoIni, $mesIni, $diaIni);
             $dataFim->setDate($anoFim, $mesFim, $diaFim);
 
-            echo $dataInicio->format('z') . '/';
-            echo $dataFim->format('z') . '<br>';
+            // echo $dataInicio->format('z') . '/';
+            // echo $dataFim->format('z') . '<br>';
 
             if (($dataEventoInicio->format('z') >= $dataInicio->format('z') && $dataEventoInicio->format('z') <= $dataFim->format('z') || 
                 ($dataEventoFim->format('z') >= $dataInicio->format('z') && $dataEventoFim->format('z') <= $dataFim->format('z')))) {

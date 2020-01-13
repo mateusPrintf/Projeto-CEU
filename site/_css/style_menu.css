@@ -47,6 +47,10 @@ body {
     padding: 25px;
 }
 
+.bg-custom {
+    background-color: rgb(50, 150, 255);
+}
+
 .menu ul {
     margin: 0;
     padding: 0;

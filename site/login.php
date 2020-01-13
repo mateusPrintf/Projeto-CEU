@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+    crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./_css/style_login.css">
     <title>CEU Online</title>
 </head>
@@ -26,7 +28,7 @@
                     <article class="row margin-formulario">
                         <div class="col p-5 bg-white rounded">
                             <h2>Entrar</h2>
-                            <form action="valida_login.php" method="post">
+                            <form action="./service/valida_login.php" method="post">
                                 <div>
                                     <label for="idUsuario">Usuário</label>
                                     <input type="text" class="form-control" name="email" id="idUsuario">

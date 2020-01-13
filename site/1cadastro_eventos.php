@@ -40,38 +40,39 @@
 </head>
 
 <body>
-    <div class="menu-top menu-font">
-        <header class="cabecalho">
-            <div class="logo">
-                <a href="#inicio">
-                    <img src="./_imagens/CEU_noname_pequeno.png" alt="Logo" />
-                </a>
-            </div>
-            <button class="menu-toggle">
-                <i class="fa fa-lg fa-bars"></i>
-            </button>
-            <nav class="menu">
-                <ul>
-                    <li>
-                        <a href="../site/gerenciamento_user_inicio.php">Início</a>
-                    </li>
-                    <li>
-                        <a href="evento.php">Eventos</a>
-                    </li>
-                    <li>
-                        <a href="#sobre">Sobre</a>
-                    </li>
-                    <li>
-                        <a href="#contato">Contato</a>
-                    </li>
-                </ul>
-            </nav>
-            <aside class="autenticacao">
-                <a href="logoff.php">Sair</a>
-            </aside>
 
-        </header>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-full fixed-top" style="background-color: rgb(50, 150, 255); height: 80px;">
+        <div class="logo" style="height: 80px">
+            <a href="#inicio";>
+                <img src="./_imagens/CEU_noname_pequeno.png" />
+            </a>
+        </div>
+        <!-- <a class="navbar-brand" href="#">Inicio</a> -->
+        <!-- <button class="navbar-toggler" type="button" <img src="./_imagens/CEU_noname_pequeno.png" alt="logo" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button> -->
+        <div class="collapse navbar-collapse menuTeste" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Eventos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sobre</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li> -->
+                
+            </ul>
+        </div>
+        <aside class="nav-item">
+            <a class="nav-link" href="logoff.php">Sair</a>
+        </aside>
+    </nav>
 
     <div class="sidebar-container">
         <div class="sidebar-logo">

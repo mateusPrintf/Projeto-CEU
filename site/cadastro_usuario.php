@@ -29,7 +29,7 @@
                     <article class="row margin-formulario">
                         <article class="usuCadast">
                             <div class="col p-5 bg-white rounded">
-                                <form method="post" action="cadastro_usuario_processamento.php">
+                                <form method="post" action="./controller/UsuarioController.php?acao=inserir">
                                     <div class="form-row">
                                         <div class="col-md-4 mb-3">
                                             <label for="validationDefault01">Primeiro nome</label>
