@@ -17,6 +17,10 @@
             $cupom->__set('qntd', $_POST['qntd']);
             $cupom->__set('validade', $_POST['validade']);
 
+            echo '<pre>';
+            print_r($_POST);
+            echo '</pre>';
+
             if (empty($_POST['valor'])) $cupom->__set('valor', 0);
             else if (empty($_POST['porcentagem'])) $cupom->__set('porcentagem', 0);
             

@@ -97,7 +97,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark navbar-full fixed-top" style="background-color: rgb(50, 150, 255); height: 80px;">
         <div class="logo" style="height: 80px">
-            <a href="#inicio";>
+            <a href="../usuario/";>
                 <img src="../_imagens/CEU_noname_pequeno.png" />
             </a>
         </div>
@@ -109,7 +109,7 @@
         <div class="collapse navbar-collapse menuTeste" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../usuario/">Inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Eventos</a>
@@ -175,7 +175,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title"><?= $evento->nome ?></h5>
                                     <p class="card-text"><?= $evento->descricao ?></p>
-                                    <a href="inscricao_usuario.php?evento=<?=$evento->id?>" class="btn btn-primary">Inscrever</a>
+                                    <a href="../controller/InscricaoController.php?acao=inserir&id_evento=<?=$evento->id?>" class="btn btn-primary">Inscrever</a>
                                 </div>
                             </div>
                         </div>

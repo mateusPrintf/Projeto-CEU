@@ -30,6 +30,10 @@
 
             $conexao = new ConexaoModel();
             $eventoService = new EventoService($evento, $conexao);
+
+            // echo '<pre>';
+            // print_r($_SESSION);
+            // echo '</pre>';
             
             if ($eventoService->inserir()) header('Location: ../usuario/?acao=sucesso');
             else header('Location: ../usuario/?acao=error');

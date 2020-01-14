@@ -1,6 +1,6 @@
 <?php
 
-    include_once "./conexao.php";
+    include_once "../service/conexao.php";
 
     session_start();
     $jaCadastrado = false;
@@ -51,17 +51,17 @@
                     $stmt3->bindValue(':id', $_GET['evento']);
                     echo $stmt3->execute();
         
-                    header('Location: evento.php?acao=inscricaoFeita');
+                    header('Location: ./evento/?acao=inscricaoFeita');
 
                 }else {
-                    header('Location: evento.php?acao=jaCadastrado');
+                    header('Location: ./evento/?acao=jaCadastrado');
                 }
 
             }else {
-                header('Location: evento.php?acao=numMaxAtingido');
+                header('Location: ./evento/?acao=numMaxAtingido');
             }
         }else {
-            header('Location: evento.php?acao=chockHorario');
+            header('Location: ./evento/?acao=chockHorario');
         }
 
     } catch (PDOException $e) {

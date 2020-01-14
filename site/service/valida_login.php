@@ -40,7 +40,7 @@
             header('Location: ../usuario/');
         }else {
             $_SESSION['autenticado'] = 'nao';
-            header('Location: login.php?login=erro');
+            header('Location: ../login.php?login=erro');
         }
         
 

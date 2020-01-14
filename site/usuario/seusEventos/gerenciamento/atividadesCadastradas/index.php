@@ -13,7 +13,7 @@
         $stmt->bindValue(':id', $_GET['id']);
         $stmt->execute();
 
-        $atividades = $stmt->fetchAll(PDO::FETCH_OBJ); //PDO::FETCH_BOTH, _ASSOC, _NUM, _OBJ  
+        $atividades = $stmt->fetchAll(PDO::FETCH_OBJ); //PDO::FETCH_BOTH, _ASSOC, _NUM, _OBJ
         
     } catch (PDOException $e) {
         echo 'Mensagem: '.$e->getMessage();
@@ -27,6 +27,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> <!-- ssl -->
     <title>CEU Online</title>
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link rel="stylesheet" href="../../../../_css/style_menu.css" />
@@ -80,7 +81,7 @@
         $(".bntConfirma").click(function () {
             passedID = $(this).attr('id');
             $('input[name="id_att"]').attr('value',passedID);
-            //alert(passedID);
+            // alert(passedID);
         })
     })
 
@@ -189,9 +190,9 @@
                             <p class="card-text"><strong>Quantidade máxima de participantes</strong>: <?=$att->qntd_part?></p>
                             <p class="card-text"><strong>Valor da Inscrição</strong>: <?=$att->valor?> R$</p>
                             <input type="hidden" class="idevt" id="<?=$id?>" value="<?=$evento->nome?>">
-                            <a href="../../../../controller/AtividadeController.php?acao=remover&id=<?=$_GET['id']?>&id_att=<?=$att->id?>" class="btn btn-primary">Excluir atividade</a> <!-- lancar a braba aqui -->
+                            <a href="../../../../controller/AtividadeController.php?acao=remover&id=<?=$_GET['id']?>&id_att=<?=$att->id?>" class="btn btn-primary">Excluir atividade</a>
                             <!-- Botão para acionar modal -->
-                            <button class="btn btn-primary bntConfirma" id="<?=$evento->id?>" data-toggle="modal" data-target="#ExemploModalCentralizado">
+                            <button class="btn btn-primary bntConfirma" id="<?=$att->id?>" data-toggle="modal" data-target="#ExemploModalCentralizado">
                                 Cadastrar cupom
                             </button>
                         </div>

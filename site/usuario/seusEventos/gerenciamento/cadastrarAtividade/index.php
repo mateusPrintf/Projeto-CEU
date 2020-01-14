@@ -1,4 +1,30 @@
 <? require_once "../../../../service/validador_acesso.php"; ?>
+<? require_once "../../../../service/conexao.php"; ?>
+
+<?php
+
+    $query = 'select data_inicio, data_fim from tb_evento where id = :id';
+
+    $conexao = new Conexao();
+    $stmt = $conexao->prepare($query);
+    $stmt->bindValue(':id', $_GET['id']);
+    $stmt->execute();
+
+    $dataEvento = $stmt->fetch(PDO::FETCH_OBJ);
+
+    $dataInicio = new DateTime();
+    $dataFim = new DateTime();
+    $dataAtual = new DateTime(null, new DateTimeZone('America/Sao_Paulo'));
+
+    list($diaInicio, $mesInicio, $anoInicio) = explode('/',$dataEvento->data_inicio);
+    $dataInicio->setDate($anoInicio, $mesInicio, $diaInicio);
+
+    list($diaFim, $mesFim, $anoFim) = explode('/',$dataEvento->data_fim);
+    $dataFim->setDate($anoFim, $mesFim, $diaFim);
+
+    $dataRange = $dataFim->format('z') - $dataAtual->format('z');
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -6,6 +32,7 @@
 <head>
     <meta charset="UTF-8">
     <title>CEU Online</title>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> <!-- ssl -->
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link rel="stylesheet" href="../../../../_css/style_menu.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -18,6 +45,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
+
+    dataRange = <?=$dataRange?>
+
+    // alert(dataRange)
     
         $(document).ready(function() {
             $('#datepicker').datepicker({
@@ -26,7 +57,8 @@
                 monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junio', 'Julho', 'Agosto',
                             'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
                 dayNames: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo'],
-                dayNamesMin: ['Se', 'Te', 'Qa', 'Qi', 'Se', 'Sa', 'Do']
+                dayNamesMin: ['Se', 'Te', 'Qa', 'Qi', 'Se', 'Sa', 'Do'],
+                maxDate: dataRange
             });
         });
 
@@ -37,7 +69,8 @@
                 monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junio', 'Julho', 'Agosto',
                             'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
                 dayNames: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo'],
-                dayNamesMin: ['Se', 'Te', 'Qa', 'Qi', 'Se', 'Sa', 'Do']
+                dayNamesMin: ['Se', 'Te', 'Qa', 'Qi', 'Se', 'Sa', 'Do'],
+                maxDate: dataRange
             });
         });
     </script>

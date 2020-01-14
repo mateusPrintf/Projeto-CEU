@@ -1,4 +1,4 @@
-<? require_once "validador_acesso.php"; ?>
+<? require_once "../service/validador_acesso.php"; ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">

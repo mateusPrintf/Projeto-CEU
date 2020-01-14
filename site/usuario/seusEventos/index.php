@@ -26,6 +26,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> <!-- ssl -->
     <title>CEU Online</title>
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link rel="stylesheet" href="../../_css/style_menu.css" />
@@ -89,11 +90,11 @@
                     <i class="fa fa-tachometer" aria-hidden="true"></i> Eventos inscritos
                 </a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="../../metodo_pagamento.php">
                     <i class="fa fa-users" aria-hidden="true"></i> Pagamentos
                 </a>
-            </li>
+            </li> -->
             <li>
                 <a href="../informacoes/">
                     <i class="fa fa-info-circle" aria-hidden="true"></i> Informações

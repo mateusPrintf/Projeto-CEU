@@ -1,5 +1,7 @@
 <?php
 
+    session_start();
+    
     require_once "../models/ConexaoModel.php";
     require_once "../models/InscricaoModel.php";
     require_once "../service/InscricaoService.php";
@@ -13,12 +15,14 @@
             $conexao = new ConexaoModel();
 
             $inscricao->__set('id_evento', $_GET['id_evento']);
-            $inscricao->__set('id_usuario', $_GET['id_usuario']);
+            $inscricao->__set('id_usuario', $_SESSION['id']);
 
             $inscricaoService = new InscricaoService($inscricao, $conexao);
 
-            if ($inscricaoService->inserir()) echo 'sucesso';
-            else echo 'error';
+            if ($inscricaoService->inserir() == 'sucesso') header('Location: ../evento/?acao=sucesso');
+            else if ($inscricaoService->inserir() == 'jaCadastrado') header('Location: ../evento/?acao=jaCadastrado');
+            else if ($inscricaoService->inserir() == 'numMaxAtingido') header('Location: ../evento/?acao=numMaxAtingido');
+            else if ($inscricaoService->inserir() == 'chockHorario') header('Location: ../evento/?acao=chockHorario');
             
         }else if ($_GET['acao'] == 'recuperarInscricaoUsuario') {
             $inscricao = new Inscricao();
