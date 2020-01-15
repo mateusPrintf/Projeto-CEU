@@ -86,7 +86,7 @@
             </li>
             <li>
                 <a href="../seusEventos/">
-                    <i class="fa fa-tachometer" aria-hidden="true"></i> Seus eventos
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> Eventos criados
                 </a>
             </li>
             <li>
