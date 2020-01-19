@@ -7,10 +7,15 @@
     try {
         $conexao = new Conexao();
         
-        $query = "select * from tb_evento where id_usuario = :id_usuario";
+        // $query = "select * from tb_evento where id_usuario = :id_usuario";
+        
+        $query = "SELECT * FROM tb_evento INNER JOIN tb_inscricao on 
+                        (tb_evento.id = tb_inscricao.id_evento) 
+                            WHERE tb_inscricao.id_usuario = :id_usuario AND tb_inscricao.papel = :papel";
 
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(':id_usuario', $_SESSION['id']);
+        $stmt->bindValue(':papel', 1);
         $stmt->execute();
 
         $eventos_dados = $stmt->fetchAll(PDO::FETCH_OBJ); //PDO::FETCH_BOTH, _ASSOC, _NUM, _OBJ  

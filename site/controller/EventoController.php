@@ -34,6 +34,8 @@
             // echo '<pre>';
             // print_r($_SESSION);
             // echo '</pre>';
+
+            // $eventoService->inserir();
             
             if ($eventoService->inserir()) header('Location: ../usuario/?acao=sucesso');
             else header('Location: ../usuario/?acao=error');

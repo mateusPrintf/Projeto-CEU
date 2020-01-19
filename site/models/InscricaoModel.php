@@ -3,6 +3,7 @@
     Class Inscricao {
         private $id_evento;
         private $id_usuario;
+        private $papel;
 
         public function __get($atributo) {
             return $this->$atributo;

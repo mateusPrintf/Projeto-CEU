@@ -23,6 +23,22 @@
             else if ($inscricaoService->inserir() == 'jaCadastrado') header('Location: ../evento/?acao=jaCadastrado');
             else if ($inscricaoService->inserir() == 'numMaxAtingido') header('Location: ../evento/?acao=numMaxAtingido');
             else if ($inscricaoService->inserir() == 'chockHorario') header('Location: ../evento/?acao=chockHorario');
+            else if ($inscricaoService->inserir() == 'errorAdm') header('Location: ../evento/?acao=errorAdm');
+
+        }else if ($_GET['acao'] == 'inserirAdm') {
+
+            $inscricao = new Inscricao();
+            $conexao = new ConexaoModel();
+
+            $inscricao->__set('id_evento', $_GET['id_evento']);
+            $inscricao->__set('papel', 1);
+
+            $inscricaoService = new InscricaoService($inscricao, $conexao);
+            
+            if ($inscricaoService->inserirAdm() == 'sucesso') header('Location: ../usuario/seusEventos/gerenciamento/?id=' . $_GET['id_evento'] . '&acao=sucesso');
+            else if ($inscricaoService->inserirAdm() == 'jaCadastrado') header('Location: ../usuario/seusEventos/gerenciamento/?id=' . $_GET['id_evento'] . '&acao=jaCadastrado');
+            else if ($inscricaoService->inserirAdm() == 'emailNaoEncontrado') header('Location: ../usuario/seusEventos/gerenciamento/?id=' . $_GET['id_evento'] . '&acao=emailNaoEncontrado');
+            else header('Location: ../usuario/seusEventos/gerenciamento/?id=' . $_GET['id_evento'] . '&acao=error');
             
         }else if ($_GET['acao'] == 'recuperarInscricaoUsuario') {
             $inscricao = new Inscricao();

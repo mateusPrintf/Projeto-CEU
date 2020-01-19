@@ -21,25 +21,25 @@
          */
         public function inserir() {
             $query = '
-            insert into tb_evento(
-                id_usuario, nome, email, descricao, tipo, area, preco_evento, qntd_part, data_inicio, data_fim, endereco, bairro, estado, cidade, cep
-                ) values (
-                    :id_usuario,
-                    :nome,
-                    :email,
-                    :descricao,
-                    :tipo,
-                    :area,
-                    :preco_evento,
-                    :qntd_part,
-                    :data_inicio,
-                    :data_fim,
-                    :endereco,
-                    :bairro,
-                    :estado,
-                    :cidade,
-                    :cep
-                )';
+                insert into tb_evento(
+                    id_usuario, nome, email, descricao, tipo, area, preco_evento, qntd_part, data_inicio, data_fim, endereco, bairro, estado, cidade, cep
+                    ) values (
+                        :id_usuario,
+                        :nome,
+                        :email,
+                        :descricao,
+                        :tipo,
+                        :area,
+                        :preco_evento,
+                        :qntd_part,
+                        :data_inicio,
+                        :data_fim,
+                        :endereco,
+                        :bairro,
+                        :estado,
+                        :cidade,
+                        :cep
+                    )';
 
             if ($_POST['tipo'] == 'gratis' || isset($_POST['tipo'])) {
                 $_POST['valor'] = 0.00;
@@ -62,7 +62,68 @@
             $stmt->bindValue(':cidade', $this->evento->__get('cidade'));
             $stmt->bindValue(':cep', $this->evento->__get('cep'));
 
-            return $stmt->execute();
+            $resul = $stmt->execute();
+
+            if ($resul) {
+                $queryEvento = 'select * from tb_evento where 
+                    id_usuario = :id_usuario and
+                    nome = :nome and
+                    email = :email and
+                    descricao = :descricao and
+                    tipo = :tipo and
+                    area = :area and
+                    preco_evento = :preco_evento and
+                    qntd_part = :qntd_part and
+                    data_inicio = :data_inicio and
+                    data_fim = :data_fim and
+                    endereco = :endereco and
+                    bairro = :bairro and
+                    estado = :estado and
+                    cidade = :cidade and
+                    cep = :cep';
+
+                $stmtEvento = $this->conexao->prepare($queryEvento);
+                $stmtEvento->bindValue(':id_usuario', $this->evento->__get('id_usuario'));
+                $stmtEvento->bindValue(':nome', $this->evento->__get('nome'));
+                $stmtEvento->bindValue(':email', $this->evento->__get('email'));
+                $stmtEvento->bindValue(':descricao', $this->evento->__get('descricao'));
+                $stmtEvento->bindValue(':tipo', $this->evento->__get('tipo'));
+                $stmtEvento->bindValue(':area', $this->evento->__get('area'));
+                $stmtEvento->bindValue(':preco_evento', $this->evento->__get('preco_evento'));
+                $stmtEvento->bindValue(':qntd_part', $this->evento->__get('qntd_part'));
+                $stmtEvento->bindValue(':data_inicio', $this->evento->__get('data_inicio'));
+                $stmtEvento->bindValue(':data_fim', $this->evento->__get('data_fim'));
+                $stmtEvento->bindValue(':endereco', $this->evento->__get('endereco'));
+                $stmtEvento->bindValue(':bairro', $this->evento->__get('bairro'));
+                $stmtEvento->bindValue(':estado', $this->evento->__get('estado'));
+                $stmtEvento->bindValue(':cidade', $this->evento->__get('cidade'));
+                $stmtEvento->bindValue(':cep', $this->evento->__get('cep'));
+
+                if ($stmtEvento->execute()) {
+
+                    $eventoCriado = $stmtEvento->fetchAll(PDO::FETCH_OBJ);
+
+                    echo '<pre>';
+                    print_r($eventoCriado);
+                    echo '</pre>';
+
+                    $queryInscricao = 'insert into tb_inscricao(
+                            id_evento, id_usuario, papel 
+                                ) values (
+                                    :id_evento, 
+                                    :id_usuario, 
+                                    :papel
+                                )';
+                    
+                    $stmtInscricaoAdmin = $this->conexao->prepare($queryInscricao);
+                    $stmtInscricaoAdmin->bindValue(':id_evento', $eventoCriado[0]->id);
+                    $stmtInscricaoAdmin->bindValue(':id_usuario', $_SESSION['id']);
+                    $stmtInscricaoAdmin->bindValue(':papel', 1);
+                    
+                    return $stmtInscricaoAdmin->execute();
+                }
+            }
+            return 0;
         }
 
         /**

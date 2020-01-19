@@ -56,9 +56,7 @@
                                     :id_evento,
                                     :id_usuario
                                 )
-                            
-                            ';
-                        
+                        ';
                         $stmt = $this->conexao->prepare($query);
                         $stmt->bindValue(':id_evento', $this->inscricao->__get('id_evento'));
                         $stmt->bindValue(':id_usuario', $this->inscricao->__get('id_usuario'));
@@ -82,6 +80,53 @@
             }else {
                 return 'chockHorario';
             }
+        }
+
+        public function inserirAdm() {
+
+            $queryInsc = "select * from tb_inscricao where id_evento = :id";
+            $stmtInsc = $this->conexao->prepare($queryInsc);
+            $stmtInsc->bindValue(':id', $this->inscricao->__get('id_evento'));
+            $stmtInsc->execute();
+
+            $users = $stmtInsc->fetchAll(PDO::FETCH_OBJ);
+
+            $queryNovoAdm = 'select id from tb_usuario where email = :email';
+            $stmtNovoAdmm = $this->conexao->prepare($queryNovoAdm);
+            $stmtNovoAdmm->bindValue(':email', $_POST['emailAdm']);
+            $stmtNovoAdmm->execute();
+            $idNovoAdm = $stmtNovoAdmm->fetch(PDO::FETCH_OBJ);
+            
+            if (empty($idNovoAdm)) return 'emailNaoEncontrado';
+                
+            $this->inscricao->__set('id_usuario', $idNovoAdm->id);
+
+            foreach ($users as $usr) {
+                if ($usr->id_usuario == $this->inscricao->__get('id_usuario')) {
+                    $jaCadastrado = true;
+                }
+            }
+
+            if (!$jaCadastrado) {
+                $query = '
+                    insert into tb_inscricao(
+                        id_evento, id_usuario, papel
+                        ) values (
+                            :id_evento,
+                            :id_usuario,
+                            :papel
+                        )
+                ';
+    
+                $stmt = $this->conexao->prepare($query);
+                $stmt->bindValue(':id_evento', $this->inscricao->__get('id_evento'));
+                $stmt->bindValue(':id_usuario', $this->inscricao->__get('id_usuario'));
+                $stmt->bindValue(':papel', $this->inscricao->__get('papel'));
+                
+                if ($stmt->execute()) return 'sucesso';
+                else return 'error';
+            
+            }else return 'jaCadastrado';
         }
 
         /**

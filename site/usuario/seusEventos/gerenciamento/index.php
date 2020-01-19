@@ -34,6 +34,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../../../_css/style_gerenciamento_usuario.css">
     <link rel="stylesheet" href="../../../_css/style_menu.css">
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../../_css/style_menu.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+    </script>
 </head>
 
 <body>
@@ -120,10 +133,42 @@
                     <h4 class="display-6">Data do inicio: <?=$evento->data_inicio?></h4>
                     <h4 class="display-6">Data do fim: <?=$evento->data_fim?></h4>
                     <h4 class="display-6">Local: <?=$evento->cidade?>-<?=$evento->estado?></h4>
+                    <br>
+                    <button class="btn btn-primary bntConfirma" id="<?=$att->id?>" data-toggle="modal" data-target="#ExemploModalCentralizado1">
+                        Adicionar administrador
+                    </button>
                 </div>
             </div>
 
             <div class="container-fluid">
+
+            </div>
+        </div>
+    </div>
+
+     <!-- Modal -->
+     <div class="modal fade" id="ExemploModalCentralizado1" tabindex="-1" role="dialog"
+        aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header cupom" style="background: rgb(50, 150, 255)">
+                   <h4 class="modal-title" id="TituloModalCentralizado">Adicionar novo administrador</h4> 
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <label>Email</label>
+                    <form method="POST" action="../../../controller/InscricaoController.php?acao=inserirAdm&id_evento=<?=$_GET['id']?>">
+                        <br>
+                        <input type="text" class="form-control" name="emailAdm" placeholder="email@email.com">
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                            <button type="submit" id="btnConfirmar" class="btn btn-primary">Confirmar</button>
+                        </div>
+                    </form>
+                </div>
 
             </div>
         </div>
