@@ -1,4 +1,30 @@
-<? require_once "../service/validador_acesso.php"; ?>
+<? require_once("../service/validador_acesso.php"); ?>
+
+<?
+    include_once("../service/conexao.php");
+    session_start();
+
+    try {
+        $conexao = new Conexao();
+        
+        $query = "select * from tb_usuario where ";
+        $query .= " id = :id";
+
+        $stmt = $conexao->prepare($query);
+
+        $stmt->bindValue(':id', $_SESSION['id']);
+
+        $stmt->execute();
+
+        $usuario_dados = $stmt->fetch(); //PDO::FETCH_BOTH, _ASSOC, _NUM, _OBJ  
+        
+    } catch (PDOException $e) {
+        echo 'Erro: '.$e->getCode().' Mensagem: '.$e->getMessage();
+        //podendo ser feito um registro de erros(logs) do sistema
+    }
+
+?>
+
 
 <!DOCTYPE html>
 <html>
@@ -88,7 +114,7 @@
 
             <!-- Main component for a primary marketing message or call to action -->
             <div class="jumbotron">
-                <h1>Bem vindo!</h1>
+                <h1>Bem vindo, <?= $usuario_dados['nome'] ?>!</h1>
                 <p>
                     Já possui um evento cadastrado no CEU? Caso ainda não possua, venha gerenciar seu evento no CEU!
                 </p>
