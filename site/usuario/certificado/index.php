@@ -92,7 +92,7 @@
             <nav aria-label="breadcrumb" style="margin-top: 3.5em">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="../../usuario">Inicio</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Certificado</li>
+                    <li class="breadcrumb-item active" aria-current="page">Certificados</li>
                 </ol>
             </nav>
             <div class="container-fluid">
@@ -110,7 +110,6 @@
                                 <h2 class="card-title"><?=$att->nome?></h2>
                                 <hr>
                                 <p class="card-text"><strong>Tipo</strong>: <?=$att->tipo?></p>
-                                <p class="card-text"><strong>Tipo</strong>: <?=$id_atv?></p>
                                 <p class="card-text"><strong>Data de inicio</strong>: <?=$att->data_inicio?></p>
                                 <p class="card-text"><strong>Data do fim</strong>: <?=$att->data_fim?></p>
                                 <a target='_blank' href="gerar_certificado/gerar_certificado.php?id_atv=<?=$att->id_atividade?>" class="btn btn-primary">Gerar Certificado</a><hr><br><br>

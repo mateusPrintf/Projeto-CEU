@@ -98,7 +98,7 @@
             <nav aria-label="breadcrumb" style="margin-top: 3.5em">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="../../usuario">Inicio</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Pagamento</li>
+                    <li class="breadcrumb-item active" aria-current="page">Pagamentos</li>
                 </ol>
             </nav>
             <div class="container-fluid">
