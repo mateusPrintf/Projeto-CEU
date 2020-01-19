@@ -3,7 +3,7 @@
     Class ConexaoModel {
         private $dsn = 'mysql:host=127.0.0.1;dbname=ceu';
         private $userName = 'root';
-        private $password = '';
+        private $password = '1219';
 
         public function conectar() {
             try {

@@ -173,8 +173,17 @@
 
     <div class="content-container">
 
+        
         <div class="container-fluid">
-            <div class="container-fluid">
+            <nav aria-label="breadcrumb" style="margin-top: 3.5em">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../../">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="../../">Eventos criados</a></li>
+                    <li class="breadcrumb-item"><a href="../">Gerenciamento</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Atividades cadastradas</li>
+                </ol>
+            </nav>
+            <div class="container-fluid" style="margin-top: -3.3em">
                 <? foreach($atividades as $id => $att) {?>
                     <div class="card container-branco">
                         <div class="card-header">

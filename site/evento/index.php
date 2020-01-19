@@ -127,12 +127,21 @@
             <a class="nav-link" href="../logoff.php">Sair</a>
         </aside>
     </nav>
+    
+    <div class="container" style="margin-top: 4.5em">
+        <nav aria-label="breadcrumb" >
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../usuario/">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Busca eventos</li>
+            </ol>
+        </nav>
+    </div>
 
-    <nav id="evento">
+    <div class="container text-center ml-6" id="evento">
         <h1>Área de Eventos</h1>
-    </nav>
+    </div>
 
-    <div class="container">
+    <div class="container" style="margin-top: -3.5em">
         <div>
             <nav id="evento">
                 <form method="post" action="../evento/">

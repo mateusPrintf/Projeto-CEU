@@ -105,8 +105,15 @@
 
     <div class="content-container">
 
+        
         <div class="container-fluid">
-            <div class="container-fluid">
+            <nav aria-label="breadcrumb" style="margin-top: 3.5em">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../">Inicio</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Eventos criados</li>
+                </ol>
+            </nav>
+            <div class="container-fluid" style="margin-top: -3.8em">
                 <h1 class="display-4 font-inicio"> Seus eventos criados</h1>
                 <hr>
                 <? foreach ($eventos_dados as $evento) { ?>

@@ -1,30 +1,4 @@
-<? require_once("../service/validador_acesso.php"); ?>
-
-<?
-    include_once("../service/conexao.php");
-    session_start();
-
-    try {
-        $conexao = new Conexao();
-        
-        $query = "select * from tb_usuario where ";
-        $query .= " id = :id";
-
-        $stmt = $conexao->prepare($query);
-
-        $stmt->bindValue(':id', $_SESSION['id']);
-
-        $stmt->execute();
-
-        $usuario_dados = $stmt->fetch(); //PDO::FETCH_BOTH, _ASSOC, _NUM, _OBJ  
-        
-    } catch (PDOException $e) {
-        echo 'Erro: '.$e->getCode().' Mensagem: '.$e->getMessage();
-        //podendo ser feito um registro de erros(logs) do sistema
-    }
-
-?>
-
+<? require_once "../service/validador_acesso.php"; ?>
 
 <!DOCTYPE html>
 <html>
@@ -110,11 +84,17 @@
 
     <div class="content-container">
 
-        <div class="container-fluid">
+        <div class="container-fluid" style="margin-top: 3.5em">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <!-- <li class="breadcrumb-item"><a href="#">Inicio</a></li> -->
+                    <li class="breadcrumb-item active" aria-current="page">Inicio</li>
+                </ol>
+            </nav>
 
             <!-- Main component for a primary marketing message or call to action -->
-            <div class="jumbotron">
-                <h1>Bem vindo, <?= $usuario_dados['nome'] ?>!</h1>
+            <div class="jumbotron" style="margin-top: 0em">
+                <h1>Bem vindo!</h1>
                 <p>
                     Já possui um evento cadastrado no CEU? Caso ainda não possua, venha gerenciar seu evento no CEU!
                 </p>

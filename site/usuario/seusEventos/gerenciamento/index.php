@@ -100,11 +100,18 @@
     </div>
 
     <div class="content-container">
-
-        <div class="container-fluid container-branco">
+        
+        <div class="container-fluid">
+            <nav aria-label="breadcrumb" style="margin-top: 3.5em">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="../">Eventos criados</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Gerenciamento</li>
+                </ol>
+            </nav>
 
             <!-- Main component for a primary marketing message or call to action -->
-            <div class="jumbotron jumbotron-fluid">
+            <div class="jumbotron jumbotron-fluid" style="margin-top: 0em">
                 <div class="container">
                     <h1 class="display-4">Evento</h1>
                     <hr>

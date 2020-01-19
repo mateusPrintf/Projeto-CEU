@@ -140,9 +140,20 @@
         </ul>
     </div>
 
-    <div class="content-container">    
-        <div class="container-fluid container-branco">
-            <div class="col p-5 bg-white rounded mt-5">
+    <div class="content-container">
+
+        
+        <div class="container-fluid">
+            <nav aria-label="breadcrumb" style="margin-top: 3.5em">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../../">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="../../">Eventos criados</a></li>
+                    <li class="breadcrumb-item"><a href="../">Gerenciamento</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Cadastrar atividade</li>
+                </ol>
+            </nav>
+
+            <div class="col p-5 bg-white rounded" style="margin-top: 0em">
                 <h2>Adicionar atividade</h2>
                 <hr>
                 <form method="post" action="../../../../controller/AtividadeController.php?id=<?=$_GET['id']?>&acao=inserir">

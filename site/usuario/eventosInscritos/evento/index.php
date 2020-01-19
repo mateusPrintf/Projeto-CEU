@@ -102,9 +102,18 @@
     <div class="content-container">
 
         <div class="container-fluid">
+
+            <nav aria-label="breadcrumb" style="margin-top: 3.5em">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="../">Eventos inscritos</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Evento</li>
+                </ol>
+            </nav>
+
             <div class="container-fluid">
 
-                <div class="card" style="margin-top: 4em">
+                <div class="card" style="margin-top: 0em">
                     <div class="card-header">
                         <h1>Informações sobre o evento</h1>
                     </div>
