@@ -79,6 +79,16 @@
                     <i class="fa fa-info-circle" aria-hidden="true"></i> Informações
                 </a>
             </li>
+            <li>
+                <a href="./certificado/index.php">
+                    <i class="fa fa-info-circle" aria-hidden="true"></i> Certificados
+                </a>
+            </li>
+            <li>
+                <a href="./pagamento/index.php">
+                    <i class="fa fa-info-circle" aria-hidden="true"></i> Pagamentos
+                </a>
+            </li>
         </ul>
     </div>
 
