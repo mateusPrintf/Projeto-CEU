@@ -88,7 +88,7 @@ $pdfdoc = $pdf->Output('', 'S');
 
 
 $subject = 'Seu Certificado do Workshop';
-$messageBody = "Olá $nome<br><br>É com grande prazer que entregamos o seu certificado.<br>Ele está em anexo nesse e-mail.<br><br>Atenciosamente,<br>Lincoln Borges<br><a href='http://www.lnborges.com.br'>http://www.lnborges.com.br</a>";
+$messageBody = "Olá $nome<br><br>É com grande prazer que entregamos o seu certificado.<br>Ele está em anexo nesse e-mail.<br><br>Atenciosamente,<br>Anjos do CEU<br>;
 
 
 $mail = new PHPMailer();
