@@ -1,0 +1,119 @@
+{
+  "id": "4dbe33b1-4e07-4692-bd73-c1f84b2cdcb7",
+  "version": "2.0",
+  "name": "teste_MENU_NAV",
+  "url": "http://localhost/Projeto-CEU-master/site/_site/menu.html",
+  "tests": [{
+    "id": "d93a9e61-588c-4049-b790-cf234b915558",
+    "name": "teste_Menu_Clicks",
+    "commands": [{
+      "id": "694e7bc7-83fd-4aa1-a9e2-c44ba4a08c13",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/Projeto-CEU-master/site/_site/menu.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "79c7c0b1-ea47-4822-bc6d-b130c17b6080",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8018ec39-3cdb-44fb-8543-91047745ff51",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Início",
+      "targets": [
+        ["linkText=Início", "linkText"],
+        ["css=li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Início')]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '#inicio')])[2]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Início')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ba4b553b-dd78-407a-ad95-0149b777ade9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Eventos",
+      "targets": [
+        ["linkText=Eventos", "linkText"],
+        ["css=li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Eventos')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '../tela Evento/evento.html')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Eventos')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7b40f974-7a7c-47b2-b5fc-0504810b3d67",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sobre",
+      "targets": [
+        ["linkText=Sobre", "linkText"],
+        ["css=li:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Sobre')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '#sobre')]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sobre')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "33bacce5-e171-454d-8873-b29017194908",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Contato",
+      "targets": [
+        ["linkText=Contato", "linkText"],
+        ["css=li:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Contato')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '#contato')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Contato')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a6cd3ab0-c50b-43ed-af12-6b35e528bf81",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.autenticacao > a:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '../login/login.html')]", "xpath:href"],
+        ["xpath=//aside/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9b112dac-b868-4a88-ab93-e47a45b377a1",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Cadastre-se",
+      "targets": [
+        ["linkText=Cadastre-se", "linkText"],
+        ["css=.botao", "css:finder"],
+        ["xpath=//a[contains(text(),'Cadastre-se')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '../cadastro/cadastro_usuario.html')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Cadastre-se')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "7e9d1d76-ef11-4ae9-889f-f385cba9a84e",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["d93a9e61-588c-4049-b790-cf234b915558"]
+  }],
+  "urls": [],
+  "plugins": []
+}

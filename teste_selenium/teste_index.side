@@ -1,0 +1,85 @@
+{
+  "id": "00f8bdb3-a87c-40d3-85b4-59d761318c74",
+  "version": "2.0",
+  "name": "teste_index",
+  "url": "http://localhost/Projeto-CEU-master/site/_site/index.html",
+  "tests": [{
+    "id": "7a6309dd-a1f1-4712-a800-e14302d142ea",
+    "name": "INDEX_VALIDO",
+    "commands": [{
+      "id": "16e9ec6b-c27a-491d-8435-7ef5e7a0c2d0",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/Projeto-CEU-master/site/_site/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "96b10673-e976-41a1-80e2-1b269d1342e6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "67cf9ab8-4cd9-42d6-ad1d-54fdab350cb3",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Entrar",
+      "targets": [
+        ["linkText=Entrar", "linkText"],
+        ["css=.botao", "css:finder"],
+        ["xpath=//a[contains(text(),'Entrar')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '../_site/login.html')]", "xpath:href"],
+        ["xpath=//aside/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Entrar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "7b28fc09-79ae-423a-b7ec-768d9d45647e",
+    "name": "INDEX_click_logo",
+    "commands": [{
+      "id": "9ecb5f7d-dc5c-4865-87e3-1e4a1d22fa90",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/Projeto-CEU-master/site/_site/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "547daace-2f20-4726-8b95-a41c93f5e3a5",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "882x708",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "67c4d6c9-fa67-4091-9bc3-8862c7ca98c5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.img-fluid",
+      "targets": [
+        ["css=.img-fluid", "css:finder"],
+        ["xpath=//div[@id='conteudo']/article/figure/a/img", "xpath:idRelative"],
+        ["xpath=//img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "43e4ecc8-a12f-47b2-9475-66adc511a981",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "88156233-8535-4fda-815f-3d3b8005caa7",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["7a6309dd-a1f1-4712-a800-e14302d142ea"]
+  }],
+  "urls": [],
+  "plugins": []
+}

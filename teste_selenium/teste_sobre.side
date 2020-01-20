@@ -1,0 +1,49 @@
+{
+  "id": "976302c2-8ff0-46f8-ae66-3f0cd14106f6",
+  "version": "2.0",
+  "name": "teste_sobre",
+  "url": "http://localhost",
+  "tests": [{
+    "id": "83761962-115b-4087-a446-0f5e4f7fa6b0",
+    "name": "teste_sobre",
+    "commands": [{
+      "id": "62fd4d6a-7450-4c2f-ad9c-fc5ebc6c2afb",
+      "comment": "",
+      "command": "open",
+      "target": "/Projeto-CEU-master/Projeto-CEU-master/site/_site/sobre.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c15b34f6-ae31-4c17-a0a3-30fd05b64ca0",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "882x709",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9b911333-c4a1-4b83-8350-7f2a90a34ec4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Voltar",
+      "targets": [
+        ["linkText=Voltar", "linkText"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Voltar')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '../_site/gerenciamento_usuario_info.html')]", "xpath:href"],
+        ["xpath=//center/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Voltar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "e5cc1d9d-29d6-465f-a8e2-c997fe6d51f7",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["83761962-115b-4087-a446-0f5e4f7fa6b0"]
+  }],
+  "urls": ["http://localhost/"],
+  "plugins": []
+}
