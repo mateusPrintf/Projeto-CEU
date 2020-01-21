@@ -204,6 +204,7 @@
                             <button class="btn btn-primary bntConfirma" id="<?=$att->id?>" data-toggle="modal" data-target="#ExemploModalCentralizado">
                                 Cadastrar cupom
                             </button>
+                            <a target='_blank' href="./relatorio/index.php?id_atv=<?=$att->id?>" class="btn btn-primary">Relação de Inscritos</a>
                         </div>
                     </div>
                 <?}?>
