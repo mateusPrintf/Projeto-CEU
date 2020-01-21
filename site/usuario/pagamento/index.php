@@ -118,7 +118,7 @@
                         <p class="card-text"><strong>Tipo</strong>: <?=$att->tipo?></p>
                         <p class="card-text"><strong>Valor</strong>: R$<?=$att->valor?>.00</p>
                         <p class="card-text"><strong>Data Inico</strong>: <?=$att->data_inicio?></p>
-                        <a href="./pagamento.php?id_atv=<?=$att->id_atividade?>" type="button" class="btn btn-primary">Efetuar pagamento</a>
+                        <a  target='_blank' href="./pagamento.php?id_atv=<?=$att->id_atividade?>" type="button" class="btn btn-primary">Efetuar pagamento</a>
                         <hr><br>
                         <?}?>
                         <? } else { ?>
