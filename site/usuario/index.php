@@ -1,5 +1,29 @@
 <? require_once "../service/validador_acesso.php"; ?>
 
+<? include_once "../service/conexao.php" ?>
+
+<?php
+    
+    try {
+        $conexao = new Conexao();
+
+        $queryAtt = '
+        SELECT * FROM tb_usuario WHERE tb_usuario.id = :id_usuario
+        ';
+        $stmtAtt = $conexao->prepare($queryAtt);
+        $stmtAtt->bindValue(':id_usuario', $_SESSION['id']);
+        $stmtAtt->execute();
+
+        $atividades = $stmtAtt->fetchAll();
+
+        foreach($atividades as $att);
+
+    } catch (PDOException $e) {
+        echo 'Erro: '.$e->getCode().' Mensagem: '.$e->getMessage();
+        //podendo ser feito um registro de erros(logs) do sistema
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -104,7 +128,7 @@
 
             <!-- Main component for a primary marketing message or call to action -->
             <div class="jumbotron" style="margin-top: 0em">
-                <h1>Bem vindo!</h1>
+                <h1>Bem vindo, <?=$att['nome']?>!</h1>
                 <p>
                     Já possui um evento cadastrado no CEU? Caso ainda não possua, venha gerenciar seu evento no CEU!
                 </p>
