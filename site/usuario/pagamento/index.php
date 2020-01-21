@@ -112,14 +112,19 @@
                         <? if (!empty($atividades)) { ?>
                         <hr>
                         <? foreach($atividades as $att) { ?>
-                        <?$id_atv = $att->id_atividade;?>
-                        <h2 class="card-title"><?=$att->nome?></h2>
-                        <hr>
-                        <p class="card-text"><strong>Tipo</strong>: <?=$att->tipo?></p>
-                        <p class="card-text"><strong>Valor</strong>: R$<?=$att->valor?>.00</p>
-                        <p class="card-text"><strong>Data Inico</strong>: <?=$att->data_inicio?></p>
-                        <a  target='_blank' href="./pagamento.php?id_atv=<?=$att->id_atividade?>" type="button" class="btn btn-primary">Efetuar pagamento</a>
-                        <hr><br>
+                            <?if ($att->valor > 0) {?>
+                                <h2 class="card-title"><?=$att->nome?></h2>
+                                <hr>
+                                <p class="card-text"><strong>Tipo</strong>: <?=$att->tipo?></p>
+                                <p class="card-text"><strong>Valor</strong>: R$<?=$att->valor?>.00</p>
+                                <p class="card-text"><strong>Data Inico</strong>: <?=$att->data_inicio?></p>
+                                <a  target='_blank' href="./pagamento.php?id_atv=<?=$att->id_atividade?>" type="button" class="btn btn-primary">Efetuar pagamento</a>
+                                <hr><br>
+                            <?} else {?>
+                                <div class="bg-center">
+                                <h4></h4>
+                                </div>
+                            <?}?>
                         <?}?>
                         <? } else { ?>
                         <div class="bg-center">
